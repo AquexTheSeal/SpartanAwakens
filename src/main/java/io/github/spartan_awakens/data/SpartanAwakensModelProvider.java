@@ -5,6 +5,9 @@ import net.minecraft.data.DataGenerator;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class SpartanAwakensModelProvider extends ItemModelProvider {
 
     public SpartanAwakensModelProvider(DataGenerator generator, ExistingFileHelper existingFileHelper) {
@@ -13,5 +16,6 @@ public class SpartanAwakensModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+        List<String> materials = new ArrayList<>();
     }
 }
