@@ -6,10 +6,14 @@ import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait;
 import io.github.chaosawakens.common.enums.CAItemTier;
 import io.github.chaosawakens.data.CATagProvider;
 import io.github.spartanawakens.SpartanAwakens;
+import net.minecraft.client.renderer.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
@@ -43,6 +47,10 @@ public class SAItems {
     public static Item boomerangTigersEye;
     public static Item glaiveTigersEye;
     public static Item quarterstaffTigersEye;
+    public static Item flangedMaceTigersEye;
+    public static Item longbowTigersEye;
+    public static Item heavyCrossbowTigersEye;
+    public static Item tomahawkTigersEye;
 
     public static Item daggerAmethyst;
     public static Item longswordAmethyst;
@@ -61,6 +69,10 @@ public class SAItems {
     public static Item boomerangAmethyst;
     public static Item glaiveAmethyst;
     public static Item quarterstaffAmethyst;
+    public static Item flangedMaceAmethyst;
+    public static Item longbowAmethyst;
+    public static Item heavyCrossbowAmethyst;
+    public static Item tomahawkAmethyst;
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
@@ -100,6 +112,14 @@ public class SAItems {
         reg.register(glaiveTigersEye);
         quarterstaffTigersEye = SpartanWeaponryAPI.createQuarterstaff(materialTigersEye, SAItemGroups.spartanAwakensCAMatsItemGroup);
         reg.register(quarterstaffTigersEye);
+        flangedMaceTigersEye = SpartanWeaponryAPI.createFlangedMace(materialTigersEye, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(quarterstaffTigersEye);
+        longbowTigersEye = SpartanWeaponryAPI.createLongbow(materialTigersEye, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(quarterstaffTigersEye);
+        heavyCrossbowTigersEye = SpartanWeaponryAPI.createHeavyCrossbow(materialTigersEye, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(quarterstaffTigersEye);
+        tomahawkTigersEye = SpartanWeaponryAPI.createTomahawk(materialTigersEye, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(tomahawkTigersEye);
 
         daggerAmethyst = SpartanWeaponryAPI.createDagger(materialAmethyst, SAItemGroups.spartanAwakensCAMatsItemGroup);
         reg.register(daggerAmethyst);
@@ -135,5 +155,13 @@ public class SAItems {
         reg.register(glaiveAmethyst);
         quarterstaffAmethyst = SpartanWeaponryAPI.createQuarterstaff(materialAmethyst, SAItemGroups.spartanAwakensCAMatsItemGroup);
         reg.register(quarterstaffAmethyst);
+        flangedMaceAmethyst = SpartanWeaponryAPI.createFlangedMace(materialAmethyst, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(flangedMaceAmethyst);
+        longbowAmethyst = SpartanWeaponryAPI.createLongbow(materialAmethyst, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(longbowAmethyst);
+        heavyCrossbowAmethyst = SpartanWeaponryAPI.createHeavyCrossbow(materialAmethyst, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(heavyCrossbowAmethyst);
+        tomahawkAmethyst = SpartanWeaponryAPI.createTomahawk(materialAmethyst, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(tomahawkAmethyst);
     }
 }
