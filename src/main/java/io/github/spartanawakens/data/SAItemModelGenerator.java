@@ -1,5 +1,6 @@
 package io.github.spartanawakens.data;
 
+import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import io.github.chaosawakens.ChaosAwakens;
 import io.github.chaosawakens.common.registry.CABlocks;
 import io.github.chaosawakens.common.registry.CAItems;

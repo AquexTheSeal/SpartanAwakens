@@ -3,17 +3,25 @@ package io.github.spartanawakens;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import io.github.chaosawakens.ChaosAwakens;
 import io.github.spartanawakens.data.SAItemModelGenerator;
+import io.github.spartanawakens.registry.SAItems;
 import net.minecraft.data.DataGenerator;
+import net.minecraft.item.Item;
+import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.data.ExistingFileHelper;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.GatherDataEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.ForgeRegistries;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import software.bernie.example.GeckoLibMod;
 import software.bernie.geckolib3.GeckoLib;
+
+import java.sql.Ref;
 
 @Mod(SpartanAwakens.MODID)
 public class SpartanAwakens {
