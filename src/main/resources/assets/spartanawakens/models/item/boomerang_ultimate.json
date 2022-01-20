@@ -1,0 +1,14 @@
+{
+    "parent": "spartanweaponry:item/boomerang_base",
+    "textures": {
+        "layer0": "spartanawakens:items/boomerang_ultimate"
+    },
+    "overrides": [
+        {
+            "predicate": {
+                "throwing": 1
+            },
+            "model": "spartanawakens:item/boomerang_ultimate_throwing"
+        }
+    ]
+}

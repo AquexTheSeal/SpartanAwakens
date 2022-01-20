@@ -11,7 +11,7 @@ public class SAItemGroups {
 
         @Override
         public ItemStack makeIcon() {
-            return new ItemStack(SAItems.halberdAmethyst);
+            return new ItemStack(SAItems.halberdUltimate.getItem());
         }
     };
 }

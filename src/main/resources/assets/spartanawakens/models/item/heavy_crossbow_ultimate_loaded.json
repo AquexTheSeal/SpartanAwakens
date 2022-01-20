@@ -1,0 +1,6 @@
+{
+    "parent": "spartanweaponry:item/heavy_crossbow_wood_loaded",
+    "textures": {
+        "layer0": "spartanawakens:items/heavy_crossbow_ultimate_loaded"
+    }
+}

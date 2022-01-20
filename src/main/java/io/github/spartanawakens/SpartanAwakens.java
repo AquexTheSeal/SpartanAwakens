@@ -51,5 +51,8 @@ public class SpartanAwakens {
         if (event.includeClient()) {
             dataGenerator.addProvider(new SAItemModelGenerator(dataGenerator, existing));
         }
+        if (event.includeServer()) {
+            dataGenerator.addProvider(new SAItemModelGenerator(dataGenerator, existing));
+        }
     }
 }
