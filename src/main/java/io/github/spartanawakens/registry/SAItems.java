@@ -6,6 +6,8 @@ import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait;
 import io.github.chaosawakens.common.enums.CAItemTier;
 import io.github.chaosawakens.data.CATagProvider;
 import io.github.spartanawakens.SpartanAwakens;
+import io.github.spartanawakens.integrations.UltimateMeeleeWeaponProperty;
+import io.github.spartanawakens.integrations.UltimateRangedWeaponProperty;
 import net.minecraft.client.renderer.model.ModelResourceLocation;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
@@ -23,12 +25,14 @@ import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
 
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SAItems {
     public static WeaponMaterial materialTigersEye = new WeaponMaterial("tigers_eye", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, new ResourceLocation("chaosawakens:tigers_eye"));
     public static WeaponMaterial materialAmethyst = new WeaponMaterial("amethyst", SpartanAwakens.MODID, 0, 0, 3, 2000, 9.0F, 11.0F, 18, new ResourceLocation("chaosawakens:amethyst"));
+    public static WeaponMaterial materialUltimate = new WeaponMaterial("ultimate", SpartanAwakens.MODID, 0, 0, 5, 3000, 15.0F, 36.0F, 64, new ResourceLocation("chaosawakens:titanium_ingot"), new UltimateMeeleeWeaponProperty("ultimate_meelee", SpartanAwakens.MODID), new UltimateRangedWeaponProperty("ultimate_ranged", SpartanAwakens.MODID));
 
     public static Item daggerTigersEye;
     public static Item longswordTigersEye;
@@ -51,6 +55,7 @@ public class SAItems {
     public static Item longbowTigersEye;
     public static Item heavyCrossbowTigersEye;
     public static Item tomahawkTigersEye;
+    public static Item battleHammerTigersEye;
 
     public static Item daggerAmethyst;
     public static Item longswordAmethyst;
@@ -73,11 +78,38 @@ public class SAItems {
     public static Item longbowAmethyst;
     public static Item heavyCrossbowAmethyst;
     public static Item tomahawkAmethyst;
+    public static Item battleHammerAmethyst;
+
+    public static Item daggerUltimate;
+    public static Item longswordUltimate;
+    public static Item katanaUltimate;
+    public static Item saberUltimate;
+    public static Item rapierUltimate;
+    public static Item greatswordUltimate;
+    public static Item warhammerUltimate;
+    public static Item spearUltimate;
+    public static Item halberdUltimate;
+    public static Item pikeUltimate;
+    public static Item lanceUltimate;
+    public static Item throwingKnifeUltimate;
+    public static Item javelinUltimate;
+    public static Item battleaxeUltimate;
+    public static Item boomerangUltimate;
+    public static Item glaiveUltimate;
+    public static Item quarterstaffUltimate;
+    public static Item flangedMaceUltimate;
+    public static Item longbowUltimate;
+    public static Item heavyCrossbowUltimate;
+    public static Item tomahawkUltimate;
+    public static Item battleHammerUltimate;
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> reg = event.getRegistry();
 
+        //========================================
+        //           TIGER'S EYE
+        //========================================
         daggerTigersEye = SpartanWeaponryAPI.createDagger(materialTigersEye, SAItemGroups.spartanAwakensCAMatsItemGroup);
         reg.register(daggerTigersEye);
         longswordTigersEye = SpartanWeaponryAPI.createLongsword(materialTigersEye, SAItemGroups.spartanAwakensCAMatsItemGroup);
@@ -120,7 +152,12 @@ public class SAItems {
         reg.register(quarterstaffTigersEye);
         tomahawkTigersEye = SpartanWeaponryAPI.createTomahawk(materialTigersEye, SAItemGroups.spartanAwakensCAMatsItemGroup);
         reg.register(tomahawkTigersEye);
+        battleHammerTigersEye = SpartanWeaponryAPI.createBattleHammer(materialTigersEye, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(battleHammerTigersEye);
 
+        //========================================
+        //             AMETHYST
+        //========================================
         daggerAmethyst = SpartanWeaponryAPI.createDagger(materialAmethyst, SAItemGroups.spartanAwakensCAMatsItemGroup);
         reg.register(daggerAmethyst);
         longswordAmethyst = SpartanWeaponryAPI.createLongsword(materialAmethyst, SAItemGroups.spartanAwakensCAMatsItemGroup);
@@ -163,5 +200,55 @@ public class SAItems {
         reg.register(heavyCrossbowAmethyst);
         tomahawkAmethyst = SpartanWeaponryAPI.createTomahawk(materialAmethyst, SAItemGroups.spartanAwakensCAMatsItemGroup);
         reg.register(tomahawkAmethyst);
+        battleHammerAmethyst = SpartanWeaponryAPI.createBattleHammer(materialAmethyst, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(battleHammerAmethyst);
+
+        //========================================
+        //             ULTIMATE
+        //========================================
+        daggerUltimate = SpartanWeaponryAPI.createDagger(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(daggerUltimate);
+        longswordUltimate = SpartanWeaponryAPI.createLongsword(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(longswordUltimate);
+        katanaUltimate = SpartanWeaponryAPI.createKatana(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(katanaUltimate);
+        saberUltimate = SpartanWeaponryAPI.createSaber(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(saberUltimate);
+        rapierUltimate = SpartanWeaponryAPI.createRapier(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(rapierUltimate);
+        greatswordUltimate = SpartanWeaponryAPI.createGreatsword(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(greatswordUltimate);
+        warhammerUltimate = SpartanWeaponryAPI.createWarhammer(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(warhammerUltimate);
+        spearUltimate = SpartanWeaponryAPI.createSpear(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(spearUltimate);
+        halberdUltimate = SpartanWeaponryAPI.createHalberd(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(halberdUltimate);
+        pikeUltimate = SpartanWeaponryAPI.createPike(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(pikeUltimate);
+        lanceUltimate = SpartanWeaponryAPI.createLance(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(lanceUltimate);
+        throwingKnifeUltimate = SpartanWeaponryAPI.createThrowingKnife(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(throwingKnifeUltimate);
+        javelinUltimate = SpartanWeaponryAPI.createJavelin(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(javelinUltimate);
+        battleaxeUltimate = SpartanWeaponryAPI.createBattleaxe(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(battleaxeUltimate);
+        boomerangUltimate = SpartanWeaponryAPI.createBoomerang(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(boomerangUltimate);
+        glaiveUltimate = SpartanWeaponryAPI.createGlaive(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(glaiveUltimate);
+        quarterstaffUltimate = SpartanWeaponryAPI.createQuarterstaff(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(quarterstaffUltimate);
+        flangedMaceUltimate = SpartanWeaponryAPI.createFlangedMace(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(flangedMaceUltimate);
+        longbowUltimate = SpartanWeaponryAPI.createLongbow(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(longbowUltimate);
+        heavyCrossbowUltimate = SpartanWeaponryAPI.createHeavyCrossbow(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(heavyCrossbowUltimate);
+        tomahawkUltimate = SpartanWeaponryAPI.createTomahawk(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(tomahawkUltimate);
+        battleHammerUltimate = SpartanWeaponryAPI.createBattleHammer(materialUltimate, SAItemGroups.spartanAwakensCAMatsItemGroup);
+        reg.register(battleHammerUltimate);
     }
 }

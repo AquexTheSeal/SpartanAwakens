@@ -29,6 +29,8 @@ public class SAItemModelGenerator extends ItemModelProvider {
     @Override
     protected void registerModels() {
         List<String> materials = new ArrayList<>();
+        materials.add("tigers_eye");
+        materials.add("amethyst");
 
         List<String> meleeWeaponType = new ArrayList<>();
         meleeWeaponType.add("dagger");
