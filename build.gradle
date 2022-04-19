@@ -70,7 +70,8 @@ dependencies {
     implementation fg.deobf("io.github:ChaosAwakens:1.16.5-${project.chaosawakens}")
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.16.5:${project.geckolib}")
 
-    implementation fg.deobf("curse.maven:spartan_weaponry-278141:${project.spartanweaponry}")
+    compileOnly fg.deobf("curse.maven:spartan_weaponry-278141:${project.spartanweaponry}")
+    runtimeOnly fg.deobf("curse.maven:spartan_weaponry-278141:${project.spartanweaponry}")
 
     compileOnly fg.deobf("mezz.jei:jei-${project.minecraftVersion}:${project.jei}:api")
     runtimeOnly fg.deobf("mezz.jei:jei-${project.minecraftVersion}:${project.jei}")

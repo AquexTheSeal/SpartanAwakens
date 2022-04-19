@@ -1,8 +1,8 @@
 {
-    "parent": "spartanweaponry:item/boomerang_base",
     "textures": {
         "layer0": "spartanawakens:items/boomerang_ultimate"
     },
+    "parent": "spartanweaponry:item/boomerang_base",
     "overrides": [
         {
             "predicate": {
