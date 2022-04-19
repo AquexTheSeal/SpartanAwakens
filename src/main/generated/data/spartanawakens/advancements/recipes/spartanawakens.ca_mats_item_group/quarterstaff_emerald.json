@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:quarterstaff_emerald"
+    ]
+  },
+  "criteria": {
+    "has_emerald_quarterstaff": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:gems/emerald"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:quarterstaff_emerald"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_emerald_quarterstaff",
+      "has_the_recipe"
+    ]
+  ]
+}

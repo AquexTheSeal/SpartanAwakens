@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:pike_emerald"
+    ]
+  },
+  "criteria": {
+    "has_emerald_pike": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:gems/emerald"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:pike_emerald"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_emerald_pike",
+      "has_the_recipe"
+    ]
+  ]
+}

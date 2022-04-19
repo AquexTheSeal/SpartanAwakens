@@ -71,6 +71,7 @@ public class SAItems {
     public static SAStandardWeapons quarterstaves;
     public static SAStandardWeapons scythes;
 
+    // TODO: 19/04/2022 Ultimate and Crystal Wood pole and handle.
     static {
         Item.Properties prop = (new Item.Properties()).tab(SAItemGroups.spartanAwakensCAMatsItemGroup);
 

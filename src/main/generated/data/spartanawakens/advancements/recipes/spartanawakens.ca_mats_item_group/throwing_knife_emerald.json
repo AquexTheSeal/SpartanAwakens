@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:throwing_knife_emerald"
+    ]
+  },
+  "criteria": {
+    "has_emerald_throwing_knife": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:gems/emerald"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:throwing_knife_emerald"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_emerald_throwing_knife",
+      "has_the_recipe"
+    ]
+  ]
+}

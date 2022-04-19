@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:longsword_emerald"
+    ]
+  },
+  "criteria": {
+    "has_emerald_longsword": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "forge:gems/emerald"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:longsword_emerald"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_emerald_longsword",
+      "has_the_recipe"
+    ]
+  ]
+}
