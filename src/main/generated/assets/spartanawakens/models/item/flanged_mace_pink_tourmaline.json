@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/flanged_mace",
+  "textures": {
+    "layer0": "spartanawakens:item/flanged_mace_pink_tourmaline"
+  }
+}

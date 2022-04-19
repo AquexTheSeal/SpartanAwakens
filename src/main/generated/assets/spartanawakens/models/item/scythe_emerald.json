@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/scythe",
+  "textures": {
+    "layer0": "spartanawakens:item/scythe_emerald"
+  }
+}

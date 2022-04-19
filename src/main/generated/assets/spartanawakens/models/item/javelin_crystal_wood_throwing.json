@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/javelin_throwing",
+  "textures": {
+    "layer0": "spartanawakens:item/javelin_crystal_wood"
+  }
+}

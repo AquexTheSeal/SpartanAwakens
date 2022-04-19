@@ -1,0 +1,28 @@
+{
+  "parent": "spartanweaponry:item/base/longbow",
+  "textures": {
+    "layer0": "spartanawakens:item/longbow_kyanite_standby"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "minecraft:pulling": 1.0
+      },
+      "model": "spartanawakens:item/longbow_kyanite_pulling_0"
+    },
+    {
+      "predicate": {
+        "minecraft:pulling": 1.0,
+        "minecraft:pull": 0.65
+      },
+      "model": "spartanawakens:item/longbow_kyanite_pulling_1"
+    },
+    {
+      "predicate": {
+        "minecraft:pulling": 1.0,
+        "minecraft:pull": 0.9
+      },
+      "model": "spartanawakens:item/longbow_kyanite_pulling_2"
+    }
+  ]
+}

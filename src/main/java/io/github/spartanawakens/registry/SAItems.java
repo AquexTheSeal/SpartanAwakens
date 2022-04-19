@@ -35,6 +35,13 @@ import java.util.Set;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SAItems {
+    public static WeaponMaterial materialCrystalWood = new WeaponMaterial("crystal_wood", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, new ResourceLocation("chaosawakens:crystal_wood"));
+    public static WeaponMaterial materialKyanite = new WeaponMaterial("kyanite", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, new ResourceLocation("chaosawakens:kyanite"));
+    public static WeaponMaterial materialPinkTourmaline = new WeaponMaterial("pink_tourmaline", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, new ResourceLocation("chaosawakens:pink_tourmaline"));
+    public static WeaponMaterial materialCatsEye = new WeaponMaterial("cats_eye", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, new ResourceLocation("chaosawakens:cats_eye"));
+
+    public static WeaponMaterial materialEmerald = new WeaponMaterial("emerald", SpartanAwakens.MODID, 0, 0, 3, 1300, 8.0F, 6.0F, 24, new ResourceLocation("minecraft:emerald"));
+    public static WeaponMaterial materialTigersEye = new WeaponMaterial("tigers_eye", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, new ResourceLocation("chaosawakens:tigers_eye"));
     public static WeaponMaterial materialAmethyst = new WeaponMaterial("amethyst", SpartanAwakens.MODID, 0, 0, 3, 2000, 9.0F, 11.0F, 18, new ResourceLocation("chaosawakens:amethyst"));
     public static WeaponMaterial materialRuby = new WeaponMaterial("ruby", SpartanAwakens.MODID, 0, 0, 4, 1800, 10.0F, 16.0F, 22, new ResourceLocation("chaosawakens:ruby"));
     public static WeaponMaterial materialUltimate = new WeaponMaterial("ultimate", SpartanAwakens.MODID, 0, 0, 5, 3000, 15.0F, 36.0F, 64, new ResourceLocation("chaosawakens:titanium_ingot"), new UltimateRangedWeaponProperty("ultimate_ranged", SpartanAwakens.MODID), new UltimateMeeleeWeaponProperty("ultimate_meelee", SpartanAwakens.MODID));

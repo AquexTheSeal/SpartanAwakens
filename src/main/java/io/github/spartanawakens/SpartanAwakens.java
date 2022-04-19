@@ -3,6 +3,7 @@ package io.github.spartanawakens;
 import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import io.github.chaosawakens.ChaosAwakens;
 import io.github.spartanawakens.data.SAItemModelGenerator;
+import io.github.spartanawakens.data.SALanguageProvider;
 import io.github.spartanawakens.registry.SAItems;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;
@@ -48,10 +49,8 @@ public class SpartanAwakens {
         DataGenerator dataGenerator = event.getGenerator();
         final ExistingFileHelper existing = event.getExistingFileHelper();
 
-        if (event.includeClient()) {
-            dataGenerator.addProvider(new SAItemModelGenerator(dataGenerator, existing));
-        }
         if (event.includeServer()) {
+            dataGenerator.addProvider(new SALanguageProvider(dataGenerator, MODID, "en_us"));
             dataGenerator.addProvider(new SAItemModelGenerator(dataGenerator, existing));
         }
     }

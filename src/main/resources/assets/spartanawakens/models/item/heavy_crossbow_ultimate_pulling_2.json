@@ -1,6 +1,0 @@
-{
-    "parent": "spartanweaponry:item/heavy_crossbow_wood_pulling_0",
-    "textures": {
-        "layer0": "spartanawakens:items/heavy_crossbow_ultimate_pulling_2"
-    }
-}

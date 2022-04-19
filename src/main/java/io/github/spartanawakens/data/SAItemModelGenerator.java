@@ -1,150 +1,59 @@
 package io.github.spartanawakens.data;
 
-import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
-import io.github.chaosawakens.ChaosAwakens;
-import io.github.chaosawakens.common.registry.CABlocks;
-import io.github.chaosawakens.common.registry.CAItems;
 import io.github.spartanawakens.SpartanAwakens;
+import io.github.spartanawakens.data.helpers.SAItemModelHelper;
+import io.github.spartanawakens.registry.SAItems;
 import net.minecraft.data.DataGenerator;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.client.model.generators.ItemModelProvider;
-import net.minecraftforge.client.model.generators.ModelFile;
 import net.minecraftforge.common.data.ExistingFileHelper;
-import net.minecraftforge.fml.RegistryObject;
 
 import javax.annotation.Nonnull;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 public class SAItemModelGenerator extends ItemModelProvider {
 
+    public final SAItemModelHelper customItemModels;
+
     public SAItemModelGenerator(DataGenerator generator, ExistingFileHelper existingFileHelper) {
         super(generator, SpartanAwakens.MODID, existingFileHelper);
+        customItemModels = new SAItemModelHelper(this);
     }
 
     @Override
     protected void registerModels() {
 
-        List<String> materials = new ArrayList<>();
-        materials.add("tigers_eye");
-        materials.add("amethyst");
-        materials.add("ultimate");
+        for (Item item : SAItems.daggers.getAsList()) customItemModels.createThrowingKnifeModels(item);
+        for (Item item : SAItems.parryingDaggers.getAsList()) customItemModels.createParryingDaggerModels(item);
+        for (Item item : SAItems.longswords.getAsList()) customItemModels.createLongswordModel(item);
+        for (Item item : SAItems.katanas.getAsList()) customItemModels.createKatanaModel(item);
+        for (Item item : SAItems.sabers.getAsList()) customItemModels.createSaberModel(item);
+        for (Item item : SAItems.rapiers.getAsList()) customItemModels.createRapierModel(item);
+        for (Item item : SAItems.greatswords.getAsList()) customItemModels.createGreatswordModel(item);
+        for (Item item : SAItems.battleHammers.getAsList()) customItemModels.createBattleHammerModel(item);
+        for (Item item : SAItems.warhammers.getAsList()) customItemModels.createWarhammerModel(item);
+        for (Item item : SAItems.spears.getAsList()) customItemModels.createSpearModel(item);
+        for (Item item : SAItems.halberds.getAsList()) customItemModels.createHalberdModel(item);
+        for (Item item : SAItems.pikes.getAsList()) customItemModels.createPikeModel(item);
+        for (Item item : SAItems.lances.getAsList()) customItemModels.createLanceModel(item);
 
-        List<String> meleeWeaponType = new ArrayList<>();
-        meleeWeaponType.add("dagger");
-        meleeWeaponType.add("longsword");
-        meleeWeaponType.add("katana");
-        meleeWeaponType.add("saber");
-        meleeWeaponType.add("rapier");
-        meleeWeaponType.add("greatsword");
-        meleeWeaponType.add("hammer");
-        meleeWeaponType.add("warhammer");
-        meleeWeaponType.add("spear");
-        meleeWeaponType.add("halberd");
-        meleeWeaponType.add("pike");
-        meleeWeaponType.add("lance");
-        meleeWeaponType.add("longbow");
-        meleeWeaponType.add("heavy_crossbow");
-        meleeWeaponType.add("throwing_knife");
-        meleeWeaponType.add("tomahawk");
-        meleeWeaponType.add("javelin");
-        meleeWeaponType.add("boomerang");
-        meleeWeaponType.add("battleaxe");
-        meleeWeaponType.add("flanged_mace");
-        meleeWeaponType.add("glaive");
-        meleeWeaponType.add("quarterstaff");
+        for (Item item : SAItems.longbows.getAsList()) customItemModels.createLongbowModels(item);
+        for (Item item : SAItems.heavyCrossbows.getAsList()) customItemModels.createHeavyCrossbowModels(item);
 
-        List<String> rangedWeaponType = new ArrayList<>();
-        rangedWeaponType.add("longbow");
-        rangedWeaponType.add("heavy_crossbow");
+        for (Item item : SAItems.throwingKnives.getAsList()) customItemModels.createThrowingKnifeModels(item);
+        for (Item item : SAItems.tomahawks.getAsList()) customItemModels.createTomahawkModels(item);
+        for (Item item : SAItems.javelins.getAsList()) customItemModels.createJavelinModels(item);
+        for (Item item : SAItems.boomerangs.getAsList()) customItemModels.createBoomerangModels(item);
 
-        for (String weapon : meleeWeaponType) {
-            for (String material : materials) {
-                createMeelee(weapon, material);
-            }
-        }
-
-        for (String weapon : rangedWeaponType) {
-            for (String material : materials) {
-                createRanged(weapon, material);
-            }
-        }
-    }
-
-    private void createMeelee(String weapon, String material) {
-        String path = "item/" + weapon + "_" + material;
-        getBuilder(path)
-                .parent(getExistingFile(modLoc("spartanweaponry:item/" + weapon + "_wood")))
-                .texture("0", modLoc(path));
-    }
-
-    private void createRanged(String weapon, String material) {
-        String path = "item/" + weapon + "_" + material;
-
-        getBuilder(path)
-                .parent(getExistingFile(modLoc("spartanweaponry:item/" + weapon + "_wood")))
-                .texture("0", modLoc(path + "_standby"))
-                .override().predicate(new ResourceLocation("pulling"), 1).model(getExistingFile(modLoc(path + "_pulling_0")))
-                .predicate(new ResourceLocation("pull"), (float) 0.65).predicate(new ResourceLocation("pulling"), 1).model(getExistingFile(modLoc(path + "_pulling_2")))
-                .predicate(new ResourceLocation("pull"), 1).predicate(new ResourceLocation("pulling"), 0).model(getExistingFile(modLoc(path + "_loaded")))
-                .predicate(new ResourceLocation("pull"), 1).predicate(new ResourceLocation("pulling"), 1).model(getExistingFile(modLoc(path + "_firing")));
-
-        getBuilder(path + "_firing")
-                .parent(getExistingFile(modLoc("spartanweaponry:item/" + weapon + "_wood_pulling_0")))
-                .texture("0", modLoc(path + "_loaded"));
-
-        getBuilder(path + "_loaded")
-                .parent(getExistingFile(modLoc("spartanweaponry:item/" + weapon + "_wood")))
-                .texture("0", modLoc(path + "_loaded"));
-
-        getBuilder(path + "_pulling_0")
-                .parent(getExistingFile(modLoc("spartanweaponry:item/" + weapon + "_wood_pulling_0")))
-                .texture("0", modLoc(path + "_pulling_0"));
-
-        getBuilder(path + "_pulling_1")
-                .parent(getExistingFile(modLoc("spartanweaponry:item/" + weapon + "_wood_pulling_0")))
-                .texture("0", modLoc(path + "_pulling_1"));
-
-        getBuilder(path + "_pulling_2")
-                .parent(getExistingFile(modLoc("spartanweaponry:item/" + weapon + "_wood_pulling_0")))
-                .texture("0", modLoc(path + "_pulling_2"));
-    }
-
-    /*@Override
-    protected void registerModels() {
-        generate(CAItems.ITEMS.getEntries());
+        for (Item item : SAItems.battleaxes.getAsList()) customItemModels.createBattleaxeModel(item);
+        for (Item item : SAItems.flangedMaces.getAsList()) customItemModels.createFlangedMaceModel(item);
+        for (Item item : SAItems.glaives.getAsList()) customItemModels.createGlaiveModel(item);
+        for (Item item : SAItems.quarterstaves.getAsList()) customItemModels.createQuarterstaffModel(item);
+        for (Item item : SAItems.scythes.getAsList()) customItemModels.createScytheModel(item);
     }
 
     @Nonnull
     @Override
     public String getName() {
-        return ChaosAwakens.MODNAME + " Item models";
+        return SpartanAwakens.MODNAME + " Item models";
     }
-
-    private void generate(final Collection<RegistryObject<Item>> items) {
-        final ModelFile parentGenerated = getExistingFile(mcLoc("item/generated"));
-        final ModelFile.ExistingModelFile parentHandheld = getExistingFile(mcLoc("item/handheld"));
-
-        for (RegistryObject<Item> item : items) {
-            String name = item.getId().getPath();
-
-            if (name.startsWith("enchanted"))
-                name = name.substring(name.indexOf("_") + 1);*/
-
-            /*
-             *  Skip elements that have no texture at assets/chaosawakens/textures/item
-             *  or already have an existing model at assets/chaosawakens/models/item
-             */
-            /*if (!existingFileHelper.exists(new ResourceLocation(ChaosAwakens.MODID, "item/" + name), TEXTURE) || existingFileHelper.exists(new ResourceLocation(ChaosAwakens.MODID, "item/" + name), MODEL))
-                continue;
-
-            ChaosAwakens.LOGGER.info(item.getId());
-
-            getBuilder(item.getId().getPath()).parent(item.get().getMaxDamage(ItemStack.EMPTY) > 0 && !(item.get() instanceof ArmorItem) ? parentHandheld : parentGenerated).texture("layer0", ItemModelProvider.ITEM_FOLDER + "/" + name);
-        }
-    }*/
 }
