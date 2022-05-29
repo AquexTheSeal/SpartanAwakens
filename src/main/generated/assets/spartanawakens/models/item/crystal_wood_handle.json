@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "spartanawakens:item/crystal_wood_handle"
+  }
+}

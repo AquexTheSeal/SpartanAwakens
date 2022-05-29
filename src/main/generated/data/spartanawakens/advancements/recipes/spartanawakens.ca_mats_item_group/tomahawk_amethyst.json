@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:tomahawk_amethyst"
+    ]
+  },
+  "criteria": {
+    "has_amethyst_tomahawk": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:amethyst"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:tomahawk_amethyst"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_amethyst_tomahawk",
+      "has_the_recipe"
+    ]
+  ]
+}

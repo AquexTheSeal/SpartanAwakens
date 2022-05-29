@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:heavy_crossbow_crystal_wood"
+    ]
+  },
+  "criteria": {
+    "has_crystal_wood_heavy_crossbow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:crystal_wood"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:heavy_crossbow_crystal_wood"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_crystal_wood_heavy_crossbow",
+      "has_the_recipe"
+    ]
+  ]
+}

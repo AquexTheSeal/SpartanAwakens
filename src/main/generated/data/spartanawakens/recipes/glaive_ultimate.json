@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:glaive",
+  "pattern": [
+    " #",
+    " #",
+    " /"
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:ultimate"
+    },
+    "/": {
+      "item": "spartanawakens:ultimate_handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:glaive_ultimate"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "glaive"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

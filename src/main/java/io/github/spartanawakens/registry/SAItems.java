@@ -1,37 +1,21 @@
 package io.github.spartanawakens.registry;
 
-import com.oblivioussp.spartanweaponry.api.SpartanWeaponryAPI;
 import com.oblivioussp.spartanweaponry.api.WeaponMaterial;
-import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait;
 import com.oblivioussp.spartanweaponry.item.BasicItem;
 import com.oblivioussp.spartanweaponry.util.WeaponFactory;
-import io.github.chaosawakens.common.enums.CAItemTier;
-import io.github.chaosawakens.data.CATagProvider;
 import io.github.spartanawakens.SpartanAwakens;
-import io.github.spartanawakens.integrations.UltimateMeeleeWeaponProperty;
-import io.github.spartanawakens.integrations.UltimateRangedWeaponProperty;
+import io.github.spartanawakens.integrations.properties.UltimateMeeleeWeaponProperty;
+import io.github.spartanawakens.integrations.properties.UltimateRangedWeaponProperty;
+import io.github.spartanawakens.item.SABasicItem;
 import io.github.spartanawakens.registry.weapontypes.SARangedWeapons;
 import io.github.spartanawakens.registry.weapontypes.SAStandardWeapons;
 import io.github.spartanawakens.registry.weapontypes.SAThrowingWeapons;
-import net.minecraft.client.renderer.model.ModelResourceLocation;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.tags.ItemTags;
 import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.api.distmarker.Dist;
-import net.minecraftforge.api.distmarker.OnlyIn;
-import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.DeferredRegister;
-import net.minecraftforge.registries.ForgeRegistries;
 import net.minecraftforge.registries.IForgeRegistry;
-
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.Set;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SAItems {
@@ -44,8 +28,13 @@ public class SAItems {
     public static WeaponMaterial materialTigersEye = new WeaponMaterial("tigers_eye", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, new ResourceLocation("chaosawakens:tigers_eye"));
     public static WeaponMaterial materialAmethyst = new WeaponMaterial("amethyst", SpartanAwakens.MODID, 0, 0, 3, 2000, 9.0F, 11.0F, 18, new ResourceLocation("chaosawakens:amethyst"));
     public static WeaponMaterial materialRuby = new WeaponMaterial("ruby", SpartanAwakens.MODID, 0, 0, 4, 1800, 10.0F, 16.0F, 22, new ResourceLocation("chaosawakens:ruby"));
-    public static WeaponMaterial materialUltimate = new WeaponMaterial("ultimate", SpartanAwakens.MODID, 0, 0, 5, 3000, 15.0F, 36.0F, 64, new ResourceLocation("chaosawakens:titanium_ingot"), new UltimateRangedWeaponProperty("ultimate_ranged", SpartanAwakens.MODID), new UltimateMeeleeWeaponProperty("ultimate_meelee", SpartanAwakens.MODID));
+    public static WeaponMaterial materialUltimate = new WeaponMaterial("ultimate", SpartanAwakens.MODID, 0, 0, 5, 3000, 15.0F, 36.0F, 64, new ResourceLocation("chaosawakens:titanium_ingot"), new UltimateMeeleeWeaponProperty("ultimate_melee", SpartanAwakens.MODID));
+    public static WeaponMaterial materialUltimateRanged = new WeaponMaterial("ultimate", SpartanAwakens.MODID, 0, 0, 5, 3000, 15.0F, 36.0F, 64, new ResourceLocation("chaosawakens:titanium_ingot"), new UltimateRangedWeaponProperty("ultimate_ranged", SpartanAwakens.MODID));
 
+    public static Item crystalWoodHandle;
+    public static Item crystalWoodPole;
+    public static Item ultimateHandle;
+    public static Item ultimatePole;
     public static SAStandardWeapons daggers;
     public static SAStandardWeapons parryingDaggers;
     public static SAStandardWeapons longswords;
@@ -70,10 +59,14 @@ public class SAItems {
     public static SAStandardWeapons glaives;
     public static SAStandardWeapons quarterstaves;
     public static SAStandardWeapons scythes;
-
+    
     // TODO: 19/04/2022 Ultimate and Crystal Wood pole and handle.
     static {
         Item.Properties prop = (new Item.Properties()).tab(SAItemGroups.spartanAwakensCAMatsItemGroup);
+        crystalWoodHandle = new SABasicItem("crystal_wood_handle", prop);
+        crystalWoodPole = new SABasicItem("crystal_wood_pole", prop);
+        ultimateHandle = new SABasicItem("ultimate_handle", prop);
+        ultimatePole = new SABasicItem("ultimate_pole", prop);
 
         daggers = new SAStandardWeapons(WeaponFactory.DAGGER);
         parryingDaggers = new SAStandardWeapons(WeaponFactory.PARRYING_DAGGER);
@@ -104,6 +97,8 @@ public class SAItems {
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event) {
         IForgeRegistry<Item> reg = event.getRegistry();
+
+        reg.registerAll(crystalWoodHandle, crystalWoodPole, ultimateHandle, ultimatePole);
 
         daggers.registerItems(reg);
         parryingDaggers.registerItems(reg);

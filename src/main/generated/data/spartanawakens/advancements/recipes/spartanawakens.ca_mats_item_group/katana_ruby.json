@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:katana_ruby"
+    ]
+  },
+  "criteria": {
+    "has_ruby_katana": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:ruby"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:katana_ruby"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ruby_katana",
+      "has_the_recipe"
+    ]
+  ]
+}

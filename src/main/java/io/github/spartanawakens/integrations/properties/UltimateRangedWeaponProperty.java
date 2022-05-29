@@ -1,7 +1,8 @@
-package io.github.spartanawakens.integrations;
+package io.github.spartanawakens.integrations.properties;
 
 import com.oblivioussp.spartanweaponry.api.WeaponMaterial;
 import com.oblivioussp.spartanweaponry.api.trait.RangedCallbackWeaponTrait;
+import com.oblivioussp.spartanweaponry.item.LongbowItem;
 import net.minecraft.entity.projectile.AbstractArrowEntity;
 
 public class UltimateRangedWeaponProperty extends RangedCallbackWeaponTrait {
@@ -12,7 +13,7 @@ public class UltimateRangedWeaponProperty extends RangedCallbackWeaponTrait {
 
     @Override
     public float modifyLongbowDrawTime(WeaponMaterial material, float baseDraw) {
-        return 0.1F;
+        return 0F;
     }
 
     @Override
@@ -27,7 +28,7 @@ public class UltimateRangedWeaponProperty extends RangedCallbackWeaponTrait {
 
     @Override
     public void onProjectileSpawn(WeaponMaterial material, AbstractArrowEntity projectile) {
-        projectile.setBaseDamage(5.0D);
+        projectile.setBaseDamage(projectile.getBaseDamage() + 5.0D);
     }
 
     @Override

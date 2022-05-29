@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:scythe_crystal_wood"
+    ]
+  },
+  "criteria": {
+    "has_crystal_wood_scythe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:crystal_wood"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:scythe_crystal_wood"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_crystal_wood_scythe",
+      "has_the_recipe"
+    ]
+  ]
+}

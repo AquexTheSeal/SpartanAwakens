@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:saber_kyanite"
+    ]
+  },
+  "criteria": {
+    "has_kyanite_saber": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:kyanite"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:saber_kyanite"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_kyanite_saber",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:flanged_mace",
+  "pattern": [
+    " ##",
+    " /#",
+    "|  "
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:kyanite"
+    },
+    "|": {
+      "item": "spartanawakens:crystal_wood_handle"
+    },
+    "/": {
+      "tag": "forge:rods"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:flanged_mace_kyanite"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "flanged_mace"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

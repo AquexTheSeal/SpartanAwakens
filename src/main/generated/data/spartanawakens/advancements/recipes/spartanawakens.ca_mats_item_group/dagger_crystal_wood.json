@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:dagger_crystal_wood"
+    ]
+  },
+  "criteria": {
+    "has_crystal_wood_dagger": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:crystal_wood"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:dagger_crystal_wood"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_crystal_wood_dagger",
+      "has_the_recipe"
+    ]
+  ]
+}

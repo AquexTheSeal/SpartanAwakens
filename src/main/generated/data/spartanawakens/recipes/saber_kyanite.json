@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:saber",
+  "pattern": [
+    " #",
+    " #",
+    "#|"
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:kyanite"
+    },
+    "|": {
+      "item": "spartanawakens:crystal_wood_handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:saber_kyanite"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "saber"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

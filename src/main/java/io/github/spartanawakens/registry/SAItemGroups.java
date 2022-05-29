@@ -6,6 +6,7 @@ import net.minecraft.enchantment.Enchantments;
 import net.minecraft.enchantment.PiercingEnchantment;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 
 public class SAItemGroups {
 

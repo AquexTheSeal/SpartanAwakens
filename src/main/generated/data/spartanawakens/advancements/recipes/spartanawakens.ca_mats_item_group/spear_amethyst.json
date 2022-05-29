@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:spear_amethyst"
+    ]
+  },
+  "criteria": {
+    "has_amethyst_spear": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:amethyst"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:spear_amethyst"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_amethyst_spear",
+      "has_the_recipe"
+    ]
+  ]
+}

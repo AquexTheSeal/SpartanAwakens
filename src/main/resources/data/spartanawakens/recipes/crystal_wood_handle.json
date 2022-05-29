@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "spartanweaponry:handle",
+  "ingredients": [
+    {
+      "item": "chaosawakens:crystal_wood_planks"
+    },
+    {
+      "item": "chaosawakens:crystal_wood_planks"
+    },
+    {
+      "item": "spartanweaponry:handle"
+    }
+  ],
+  "result": {
+    "item": "spartanawakens:crystal_wood_handle"
+  }
+}

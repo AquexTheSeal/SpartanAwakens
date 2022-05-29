@@ -1,0 +1,15 @@
+{
+  "required": true,
+  "package": "io.github.spartanawakens.mixin",
+  "compatibilityLevel": "JAVA_8",
+  "refmap": "spartan_awakens.refmap.json",
+  "mixins": [
+    "HeavyCrossbowItemMixin",
+    "LongbowItemMixin",
+    "SwordBaseItemMixin",
+    "ThrowingWeaponItemMixin"
+  ],
+  "injectors": {
+    "defaultRequire": 1
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:longbow_tigers_eye"
+    ]
+  },
+  "criteria": {
+    "has_tigers_eye_longbow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:tigers_eye"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:longbow_tigers_eye"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tigers_eye_longbow",
+      "has_the_recipe"
+    ]
+  ]
+}

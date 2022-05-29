@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:tomahawk",
+  "pattern": [
+    "|#",
+    " #"
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:kyanite"
+    },
+    "|": {
+      "item": "spartanawakens:crystal_wood_handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:tomahawk_kyanite"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "tomahawk"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

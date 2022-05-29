@@ -1,4 +1,4 @@
-package io.github.spartanawakens.integrations;
+package io.github.spartanawakens.integrations.properties;
 
 import com.oblivioussp.spartanweaponry.api.WeaponMaterial;
 import com.oblivioussp.spartanweaponry.api.trait.MeleeCallbackWeaponTrait;

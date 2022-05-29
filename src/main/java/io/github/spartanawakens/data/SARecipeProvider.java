@@ -8,10 +8,9 @@ import io.github.chaosawakens.common.registry.CATags;
 import io.github.chaosawakens.data.CARecipeProvider;
 import io.github.spartanawakens.SpartanAwakens;
 import io.github.spartanawakens.registry.SAItems;
-import net.minecraft.data.DataGenerator;
-import net.minecraft.data.IFinishedRecipe;
-import net.minecraft.data.ItemTagsProvider;
-import net.minecraft.data.RecipeProvider;
+import io.github.spartanawakens.registry.SATags;
+import net.minecraft.block.Blocks;
+import net.minecraft.data.*;
 import net.minecraft.item.Item;
 import net.minecraft.item.Items;
 import net.minecraft.tags.ITag;
@@ -40,8 +39,34 @@ public class SARecipeProvider extends RecipeProvider {
     @Override
     protected void buildShapelessRecipes(Consumer<IFinishedRecipe> consumer) {
 
-        /*
-        registerMaterial(consumer, "cats_eye", getForgeTag("ingots/cats_eye"), ModItems.handle, ModItems.pole,
+        registerMaterial(consumer, "crystal_wood", SATags.Items.CRYSTAL_WOOD, SAItems.crystalWoodHandle, SAItems.crystalWoodPole,
+                SAItems.daggers.crystalWood, SAItems.parryingDaggers.crystalWood, SAItems.longswords.crystalWood, SAItems.katanas.crystalWood,
+                SAItems.sabers.crystalWood, SAItems.rapiers.crystalWood, SAItems.greatswords.crystalWood, SAItems.battleHammers.crystalWood,
+                SAItems.warhammers.crystalWood, SAItems.spears.crystalWood, SAItems.halberds.crystalWood, SAItems.pikes.crystalWood,
+                SAItems.lances.crystalWood, SAItems.longbows.crystalWood, SAItems.heavyCrossbows.crystalWood, SAItems.throwingKnives.crystalWood,
+                SAItems.tomahawks.crystalWood, SAItems.javelins.crystalWood, SAItems.boomerangs.crystalWood, SAItems.battleaxes.crystalWood,
+                SAItems.flangedMaces.crystalWood, SAItems.glaives.crystalWood, SAItems.quarterstaves.crystalWood, SAItems.scythes.crystalWood
+        );
+
+        registerMaterial(consumer, "kyanite", SATags.Items.KYANITE, SAItems.crystalWoodHandle, SAItems.crystalWoodPole,
+                SAItems.daggers.kyanite, SAItems.parryingDaggers.kyanite, SAItems.longswords.kyanite, SAItems.katanas.kyanite,
+                SAItems.sabers.kyanite, SAItems.rapiers.kyanite, SAItems.greatswords.kyanite, SAItems.battleHammers.kyanite,
+                SAItems.warhammers.kyanite, SAItems.spears.kyanite, SAItems.halberds.kyanite, SAItems.pikes.kyanite,
+                SAItems.lances.kyanite, SAItems.longbows.kyanite, SAItems.heavyCrossbows.kyanite, SAItems.throwingKnives.kyanite,
+                SAItems.tomahawks.kyanite, SAItems.javelins.kyanite, SAItems.boomerangs.kyanite, SAItems.battleaxes.kyanite,
+                SAItems.flangedMaces.kyanite, SAItems.glaives.kyanite, SAItems.quarterstaves.kyanite, SAItems.scythes.kyanite
+        );
+
+        registerMaterial(consumer, "pink_tourmaline", SATags.Items.PINK_TOURMALINE, SAItems.crystalWoodHandle, SAItems.crystalWoodPole,
+                SAItems.daggers.pinkTourmaline, SAItems.parryingDaggers.pinkTourmaline, SAItems.longswords.pinkTourmaline, SAItems.katanas.pinkTourmaline,
+                SAItems.sabers.pinkTourmaline, SAItems.rapiers.pinkTourmaline, SAItems.greatswords.pinkTourmaline, SAItems.battleHammers.pinkTourmaline,
+                SAItems.warhammers.pinkTourmaline, SAItems.spears.pinkTourmaline, SAItems.halberds.pinkTourmaline, SAItems.pikes.pinkTourmaline,
+                SAItems.lances.pinkTourmaline, SAItems.longbows.pinkTourmaline, SAItems.heavyCrossbows.pinkTourmaline, SAItems.throwingKnives.pinkTourmaline,
+                SAItems.tomahawks.pinkTourmaline, SAItems.javelins.pinkTourmaline, SAItems.boomerangs.pinkTourmaline, SAItems.battleaxes.pinkTourmaline,
+                SAItems.flangedMaces.pinkTourmaline, SAItems.glaives.pinkTourmaline, SAItems.quarterstaves.pinkTourmaline, SAItems.scythes.pinkTourmaline
+        );
+        
+        registerMaterial(consumer, "cats_eye", SATags.Items.CATS_EYE, SAItems.crystalWoodHandle, SAItems.crystalWoodPole,
                 SAItems.daggers.catsEye, SAItems.parryingDaggers.catsEye, SAItems.longswords.catsEye, SAItems.katanas.catsEye,
                 SAItems.sabers.catsEye, SAItems.rapiers.catsEye, SAItems.greatswords.catsEye, SAItems.battleHammers.catsEye,
                 SAItems.warhammers.catsEye, SAItems.spears.catsEye, SAItems.halberds.catsEye, SAItems.pikes.catsEye,
@@ -49,9 +74,8 @@ public class SARecipeProvider extends RecipeProvider {
                 SAItems.tomahawks.catsEye, SAItems.javelins.catsEye, SAItems.boomerangs.catsEye, SAItems.battleaxes.catsEye,
                 SAItems.flangedMaces.catsEye, SAItems.glaives.catsEye, SAItems.quarterstaves.catsEye, SAItems.scythes.catsEye
         );
-         */
         
-        registerMaterial(consumer, "emerald", Tags.Items.GEMS_EMERALD, ModItems.handle, ModItems.pole,
+        registerMaterial(consumer, "emerald", SATags.Items.EMERALD, ModItems.handle, ModItems.pole,
                 SAItems.daggers.emerald, SAItems.parryingDaggers.emerald, SAItems.longswords.emerald, SAItems.katanas.emerald,
                 SAItems.sabers.emerald, SAItems.rapiers.emerald, SAItems.greatswords.emerald, SAItems.battleHammers.emerald,
                 SAItems.warhammers.emerald, SAItems.spears.emerald, SAItems.halberds.emerald, SAItems.pikes.emerald,
@@ -60,7 +84,7 @@ public class SARecipeProvider extends RecipeProvider {
                 SAItems.flangedMaces.emerald, SAItems.glaives.emerald, SAItems.quarterstaves.emerald, SAItems.scythes.emerald
         );
         
-        registerMaterial(consumer, "tigers_eye", getForgeTag("gems/tigers_eye"), ModItems.handle, ModItems.pole,
+        registerMaterial(consumer, "tigers_eye", SATags.Items.TIGERS_EYE, ModItems.handle, ModItems.pole,
                 SAItems.daggers.tigersEye, SAItems.parryingDaggers.tigersEye, SAItems.longswords.tigersEye, SAItems.katanas.tigersEye,
                 SAItems.sabers.tigersEye, SAItems.rapiers.tigersEye, SAItems.greatswords.tigersEye, SAItems.battleHammers.tigersEye,
                 SAItems.warhammers.tigersEye, SAItems.spears.tigersEye, SAItems.halberds.tigersEye, SAItems.pikes.tigersEye,
@@ -69,7 +93,7 @@ public class SARecipeProvider extends RecipeProvider {
                 SAItems.flangedMaces.tigersEye, SAItems.glaives.tigersEye, SAItems.quarterstaves.tigersEye, SAItems.scythes.tigersEye
         );
         
-        registerMaterial(consumer, "amethyst", getForgeTag("gems/amethyst"), ModItems.handle, ModItems.pole,
+        registerMaterial(consumer, "amethyst", SATags.Items.AMETHYST, ModItems.handle, ModItems.pole,
                 SAItems.daggers.amethyst, SAItems.parryingDaggers.amethyst, SAItems.longswords.amethyst, SAItems.katanas.amethyst,
                 SAItems.sabers.amethyst, SAItems.rapiers.amethyst, SAItems.greatswords.amethyst, SAItems.battleHammers.amethyst, 
                 SAItems.warhammers.amethyst, SAItems.spears.amethyst, SAItems.halberds.amethyst, SAItems.pikes.amethyst,
@@ -78,13 +102,22 @@ public class SARecipeProvider extends RecipeProvider {
                 SAItems.flangedMaces.amethyst, SAItems.glaives.amethyst, SAItems.quarterstaves.amethyst, SAItems.scythes.amethyst
         );
 
-        registerMaterial(consumer, "ruby", getForgeTag("gems/ruby"), ModItems.handle, ModItems.pole,
+        registerMaterial(consumer, "ruby", SATags.Items.RUBY, ModItems.handle, ModItems.pole,
                 SAItems.daggers.ruby, SAItems.parryingDaggers.ruby, SAItems.longswords.ruby, SAItems.katanas.ruby,
                 SAItems.sabers.ruby, SAItems.rapiers.ruby, SAItems.greatswords.ruby, SAItems.battleHammers.ruby,
                 SAItems.warhammers.ruby, SAItems.spears.ruby, SAItems.halberds.ruby, SAItems.pikes.ruby,
                 SAItems.lances.ruby, SAItems.longbows.ruby, SAItems.heavyCrossbows.ruby, SAItems.throwingKnives.ruby,
                 SAItems.tomahawks.ruby, SAItems.javelins.ruby, SAItems.boomerangs.ruby, SAItems.battleaxes.ruby,
                 SAItems.flangedMaces.ruby, SAItems.glaives.ruby, SAItems.quarterstaves.ruby, SAItems.scythes.ruby
+        );
+
+        registerMaterial(consumer, "ultimate", SATags.Items.ULTIMATE, SAItems.ultimateHandle, SAItems.ultimatePole,
+                SAItems.daggers.ultimate, SAItems.parryingDaggers.ultimate, SAItems.longswords.ultimate, SAItems.katanas.ultimate,
+                SAItems.sabers.ultimate, SAItems.rapiers.ultimate, SAItems.greatswords.ultimate, SAItems.battleHammers.ultimate,
+                SAItems.warhammers.ultimate, SAItems.spears.ultimate, SAItems.halberds.ultimate, SAItems.pikes.ultimate,
+                SAItems.lances.ultimate, SAItems.longbows.ultimate, SAItems.heavyCrossbows.ultimate, SAItems.throwingKnives.ultimate,
+                SAItems.tomahawks.ultimate, SAItems.javelins.ultimate, SAItems.boomerangs.ultimate, SAItems.battleaxes.ultimate,
+                SAItems.flangedMaces.ultimate, SAItems.glaives.ultimate, SAItems.quarterstaves.ultimate, SAItems.scythes.ultimate
         );
     }
 

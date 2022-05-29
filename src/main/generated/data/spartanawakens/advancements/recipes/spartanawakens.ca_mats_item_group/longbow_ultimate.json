@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:longbow_ultimate"
+    ]
+  },
+  "criteria": {
+    "has_ultimate_longbow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:ultimate"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:longbow_ultimate"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ultimate_longbow",
+      "has_the_recipe"
+    ]
+  ]
+}

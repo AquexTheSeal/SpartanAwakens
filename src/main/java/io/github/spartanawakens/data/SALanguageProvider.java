@@ -19,6 +19,21 @@ public class SALanguageProvider extends LanguageProvider {
 
     @Override
     protected void addTranslations() {
+        add("itemGroup.spartanawakens.ca_mats_item_group", "Spartan Awakens");
+
+        add("tooltip.spartanweaponry.crystal_wood_handle.desc", "Used for most weapons using Crystal World resources");
+        add("tooltip.spartanweaponry.crystal_wood_pole.desc", "Used for polearm weapons using Crystal World resources");
+        add("tooltip.spartanweaponry.ultimate_handle.desc", "Used for most ultimate weapons");
+        add("tooltip.spartanweaponry.ultimate_pole.desc", "Used for polearm ultimate weapons");
+
+        add("tooltip.spartanawakens.trait.ultimate_melee", "Tremendous attack damage");
+        add("tooltip.spartanawakens.trait.ultimate_ranged", "Tremendous attack damage, faster charging time");
+
+        add(SAItems.crystalWoodHandle, "Crystal Wood Handle");
+        add(SAItems.crystalWoodPole, "Crystal Wood Pole");
+        add(SAItems.ultimateHandle, "Ultimate Handle");
+        add(SAItems.ultimatePole, "Ultimate Pole");
+
         addSAWeapons(SAItems.daggers.getAsList());
         addSAWeapons(SAItems.parryingDaggers.getAsList());
         addSAWeapons(SAItems.longswords.getAsList());
@@ -32,14 +47,12 @@ public class SALanguageProvider extends LanguageProvider {
         addSAWeapons(SAItems.halberds.getAsList());
         addSAWeapons(SAItems.pikes.getAsList());
         addSAWeapons(SAItems.lances.getAsList());
-
-        addSWWeapons(SAItems.longbows.getAsList());
-        addSWWeapons(SAItems.heavyCrossbows.getAsList());
-        addSWWeapons(SAItems.throwingKnives.getAsList());
-        addSWWeapons(SAItems.tomahawks.getAsList());
-        addSWWeapons(SAItems.javelins.getAsList());
-        addSWWeapons(SAItems.boomerangs.getAsList());
-
+        addSAWeapons(SAItems.longbows.getAsList());
+        addSAWeapons(SAItems.heavyCrossbows.getAsList());
+        addSAWeapons(SAItems.throwingKnives.getAsList());
+        addSAWeapons(SAItems.tomahawks.getAsList());
+        addSAWeapons(SAItems.javelins.getAsList());
+        addSAWeapons(SAItems.boomerangs.getAsList());
         addSAWeapons(SAItems.battleaxes.getAsList());
         addSAWeapons(SAItems.flangedMaces.getAsList());
         addSAWeapons(SAItems.glaives.getAsList());
@@ -105,7 +118,8 @@ public class SALanguageProvider extends LanguageProvider {
     public boolean twoStringBase(Item item) {
         List<? extends Item> heavyCrossbowsAsList = SAItems.heavyCrossbows.getAsList();
         List<? extends Item> throwingKnivesAsList = SAItems.throwingKnives.getAsList();
-        return heavyCrossbowsAsList.contains(item) || throwingKnivesAsList.contains(item);
+        List<? extends Item> flangedMacesAsList = SAItems.flangedMaces.getAsList();
+        return heavyCrossbowsAsList.contains(item) || throwingKnivesAsList.contains(item) || flangedMacesAsList.contains(item);
     }
 
     public String capitalizedSpacedText(String string) {

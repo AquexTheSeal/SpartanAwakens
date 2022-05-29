@@ -1,16 +1,19 @@
 buildscript {
     repositories {
         maven { url = "https://maven.minecraftforge.net" }
+        maven { url = 'https://repo.spongepowered.org/maven' }
         mavenCentral()
     }
     dependencies {
         classpath group: "net.minecraftforge.gradle", name: "ForgeGradle", version: "5.1.+", changing: true
+        classpath 'org.spongepowered:mixingradle:0.7.+'
     }
 }
 
 apply plugin: "net.minecraftforge.gradle"
 apply plugin: "eclipse"
 apply plugin: "maven-publish"
+apply plugin: 'org.spongepowered.mixin'
 
 group = "io.github"
 version = "${project.minecraftVersion}-${project.modVersion}"
@@ -28,6 +31,11 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+
+            arg "-mixin.config=spartan_awakens.mixins.json"
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             mods {
                 spartanawakens {
                     source sourceSets.main
@@ -39,6 +47,11 @@ minecraft {
             workingDirectory project.file('run')
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
+
+            arg "-mixin.config=spartan_awakens.mixins.json"
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             mods {
                 spartanawakens {
                     source sourceSets.main
@@ -51,6 +64,11 @@ minecraft {
             property 'forge.logging.markers', 'REGISTRIES'
             property 'forge.logging.console.level', 'debug'
             args '--mod', 'spartanawakens', '--all', '--output', file('src/main/generated/'), '--existing', file('src/main/resources/')
+
+            arg "-mixin.config=spartan_awakens.mixins.json"
+            property 'mixin.env.remapRefMap', 'true'
+            property 'mixin.env.refMapRemappingFile', "${projectDir}/build/createSrgToMcp/output.srg"
+
             mods {
                 spartanawakens {
                     source sourceSets.main
@@ -70,12 +88,16 @@ dependencies {
     implementation fg.deobf("io.github:ChaosAwakens:1.16.5-${project.chaosawakens}")
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.16.5:${project.geckolib}")
 
+    annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
+
     compileOnly fg.deobf("curse.maven:spartan_weaponry-278141:${project.spartanweaponry}")
     runtimeOnly fg.deobf("curse.maven:spartan_weaponry-278141:${project.spartanweaponry}")
 
     compileOnly fg.deobf("mezz.jei:jei-${project.minecraftVersion}:${project.jei}:api")
     runtimeOnly fg.deobf("mezz.jei:jei-${project.minecraftVersion}:${project.jei}")
     implementation fg.deobf("curse.maven:just-enough-resources-jer-240630:${project.jer}")
+
+    implementation fg.deobf("curse.maven:projecte-226410:${project.projecte}")
 
     runtimeOnly fg.deobf("curse.maven:mmmm-225738:${project.mmmmmmmmmmmm}")
 
@@ -84,6 +106,17 @@ dependencies {
     runtimeOnly fg.deobf("curse.maven:world_edit-225608:${project.worldedit}")
 
     runtimeOnly fg.deobf("curse.maven:world_stripper-250603:${project.worldstripper}")
+}
+
+mixin {
+    // MixinGradle Settings
+    add sourceSets.main, 'spartan_awakens.refmap.json'
+    config 'spartan_awakens.mixins.json'
+
+    debug.verbose = true
+    debug.export = true
+
+    quiet
 }
 
 repositories {

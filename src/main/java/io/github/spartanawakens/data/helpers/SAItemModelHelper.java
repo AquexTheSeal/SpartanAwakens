@@ -33,6 +33,16 @@ public class SAItemModelHelper {
         return withUncheckedParent(itemPath, parent).texture("layer0", "item/" + itemPath).getLocation();
     }
 
+    public ResourceLocation createHandleModel(Item item) {
+        return this.createSimpleModel(item, new ResourceLocation("minecraft", "item/handheld"));
+    }
+
+
+    public ResourceLocation createPoleModel(Item item) {
+        return this.createSimpleModel(item, BaseModels.basePole);
+    }
+
+
     public ResourceLocation createDaggerModels(Item item) {
         String itemPath = item.getRegistryName().getPath();
         ResourceLocation throwingModel = withUncheckedParent(itemPath + "_throwing", BaseModels.baseDaggerThrowing).texture("layer0", "item/" + itemPath).getLocation();

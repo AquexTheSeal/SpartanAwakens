@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "spartanweaponry:pole",
+  "ingredients": [
+    {
+      "item": "chaosawakens:platinum_lump"
+    },
+    {
+      "item": "chaosawakens:platinum_lump"
+    },
+    {
+      "item": "chaosawakens:uranium_ingot"
+    },
+    {
+      "item": "spartanweaponry:pole"
+    }
+  ],
+  "result": {
+    "item": "spartanawakens:ultimate_pole"
+  }
+}

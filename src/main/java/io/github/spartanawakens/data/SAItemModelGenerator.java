@@ -1,5 +1,6 @@
 package io.github.spartanawakens.data;
 
+import io.github.chaosawakens.common.registry.CABlocks;
 import io.github.spartanawakens.SpartanAwakens;
 import io.github.spartanawakens.data.helpers.SAItemModelHelper;
 import io.github.spartanawakens.registry.SAItems;
@@ -21,6 +22,11 @@ public class SAItemModelGenerator extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
+
+        customItemModels.createHandleModel(SAItems.crystalWoodHandle);
+        customItemModels.createPoleModel(SAItems.crystalWoodPole);
+        customItemModels.createHandleModel(SAItems.ultimateHandle);
+        customItemModels.createPoleModel(SAItems.ultimatePole);
 
         for (Item item : SAItems.daggers.getAsList()) customItemModels.createThrowingKnifeModels(item);
         for (Item item : SAItems.parryingDaggers.getAsList()) customItemModels.createParryingDaggerModels(item);

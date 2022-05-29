@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:lance_amethyst"
+    ]
+  },
+  "criteria": {
+    "has_amethyst_lance": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:amethyst"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:lance_amethyst"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_amethyst_lance",
+      "has_the_recipe"
+    ]
+  ]
+}
