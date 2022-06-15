@@ -8,6 +8,7 @@ import net.minecraft.data.DataGenerator;
 import net.minecraft.item.Item;
 import net.minecraftforge.common.data.LanguageProvider;
 import org.apache.commons.lang3.text.WordUtils;
+import org.lwjgl.system.CallbackI;
 
 import java.util.List;
 
@@ -85,41 +86,58 @@ public class SALanguageProvider extends LanguageProvider {
 
         } else if (split.length == 2) {
             if (SAItems.battleHammers.getAsList().contains(item)) {
-                return split[1] + " Battle " + split[0];
+                return filterText(split[1]) + " Battle " + split[0];
             } else {
-                return split[1] + " " + split[0];
+                return filterText(split[1]) + " " + split[0];
             }
 
         } else if (split.length == 3) {
             if (SAItems.battleHammers.getAsList().contains(item)) {
                 String firstWord = split[1] + " " + split[2];
                 String secondWord = split[0];
-                return firstWord + " Battle " + secondWord;
+                return filterText(firstWord) + " Battle " + secondWord;
             } else if (twoStringBase(item)) {
                 String firstWord = split[2];
                 String secondWord = split[0] + " " + split[1];
-                return firstWord + " " + secondWord;
+                return filterText(firstWord) + " " + secondWord;
             } else {
                 String firstWord = split[1] + " " + split[2];
                 String secondWord = split[0];
-                return firstWord + " " + secondWord;
+                return filterText(firstWord) + " " + secondWord;
             }
 
         } else if (split.length == 4) {
             String firstWord = split[2] + " " + split[3];
             String secondWord = split[0] + " " + split[1];
-            return firstWord + " " + secondWord;
+            return filterText(firstWord) + " " + secondWord;
 
         } else {
             return capText;
         }
     }
 
+    public String filterText(String text) {
+        if (text.equals("Cats Eye")) {
+            return "Cat's Eye";
+        } else if (text.equals("Tigers Eye")) {
+            return "Tiger's Eye";
+        } else if (text.equals("Ultimate")) {
+            return "The Ultimate";
+        }
+        return text;
+    }
+
     public boolean twoStringBase(Item item) {
         List<? extends Item> heavyCrossbowsAsList = SAItems.heavyCrossbows.getAsList();
         List<? extends Item> throwingKnivesAsList = SAItems.throwingKnives.getAsList();
         List<? extends Item> flangedMacesAsList = SAItems.flangedMaces.getAsList();
-        return heavyCrossbowsAsList.contains(item) || throwingKnivesAsList.contains(item) || flangedMacesAsList.contains(item);
+        List<? extends Item> parryingDaggersAsList = SAItems.parryingDaggers.getAsList();
+        return
+                heavyCrossbowsAsList.contains(item) ||
+                        throwingKnivesAsList.contains(item) ||
+                        flangedMacesAsList.contains(item) ||
+                        parryingDaggersAsList.contains(item)
+                ;
     }
 
     public String capitalizedSpacedText(String string) {

@@ -23,7 +23,7 @@ public class SAThrowingWeapons {
         this.tigersEye = factory.create(SAItems.materialTigersEye, swGroup, false);
         this.amethyst = factory.create(SAItems.materialAmethyst, swGroup, false);
         this.ruby = factory.create(SAItems.materialRuby, swGroup, false);
-        this.ultimate = factory.create(SAItems.materialUltimate, swGroup, false);
+        this.ultimate = factory.create(SAItems.materialUltimateMelee, swGroup, false);
     }
 
     public void registerItems(IForgeRegistry<Item> reg) {

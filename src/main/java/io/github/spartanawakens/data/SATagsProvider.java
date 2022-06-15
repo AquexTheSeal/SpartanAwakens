@@ -37,7 +37,7 @@ public class SATagsProvider extends BlockTagsProvider {
             tag(SATags.Items.CRYSTAL_WOOD).add(CABlocks.CRYSTAL_PLANKS.get().asItem());
             tag(SATags.Items.KYANITE).add(CABlocks.KYANITE.get().asItem());
             tag(SATags.Items.PINK_TOURMALINE).add(CAItems.PINK_TOURMALINE_INGOT.get());
-            tag(SATags.Items.TIGERS_EYE).add(CAItems.CATS_EYE_INGOT.get());
+            tag(SATags.Items.CATS_EYE).add(CAItems.CATS_EYE_INGOT.get());
 
             tag(SATags.Items.EMERALD).add(Items.EMERALD);
             tag(SATags.Items.TIGERS_EYE).add(CAItems.TIGERS_EYE.get());

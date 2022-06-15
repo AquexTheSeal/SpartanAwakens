@@ -1,25 +1,38 @@
 package io.github.spartanawakens.mixin;
 
 import com.oblivioussp.spartanweaponry.api.WeaponMaterial;
+import com.oblivioussp.spartanweaponry.api.trait.IMeleeTraitCallback;
+import com.oblivioussp.spartanweaponry.api.trait.IThrowingTraitCallback;
 import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait;
-import com.oblivioussp.spartanweaponry.item.LongbowItem;
+import com.oblivioussp.spartanweaponry.init.ModEnchantments;
 import com.oblivioussp.spartanweaponry.item.ThrowingWeaponItem;
 import io.github.chaosawakens.api.IAutoEnchantable;
 import io.github.chaosawakens.common.config.CAConfig;
 import io.github.spartanawakens.registry.SAAutoEnchantments;
+import io.github.spartanawakens.registry.SAItems;
 import net.minecraft.enchantment.EnchantmentData;
-import net.minecraft.item.BowItem;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
+import net.minecraft.enchantment.EnchantmentHelper;
+import net.minecraft.item.*;
 import net.minecraft.util.NonNullList;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Overwrite;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
+
+import java.util.Iterator;
+import java.util.List;
 
 @Mixin(ThrowingWeaponItem.class)
-public class ThrowingWeaponItemMixin extends Item implements IAutoEnchantable {
+public abstract class ThrowingWeaponItemMixin extends Item implements IAutoEnchantable {
+    @Shadow protected WeaponMaterial material;
+    @Shadow protected int maxChargeTicks;
+    @Shadow protected List<WeaponTrait> traits;
+
+    @Shadow protected abstract void initNBT(ItemStack stack, boolean initUUID);
+
     private EnchantmentData[] enchantments;
 
     // Dummy constructor
@@ -38,15 +51,51 @@ public class ThrowingWeaponItemMixin extends Item implements IAutoEnchantable {
     }
 
     @Override
+    public Rarity getRarity(ItemStack stack) {
+        if (material == SAItems.materialUltimateMelee || material == SAItems.materialUltimateRanged) {
+            return Rarity.EPIC;
+        } else {
+            return super.getRarity(stack);
+        }
+    }
+
+    /**
+     * @author ObliviousSpartan
+     */
+    @Overwrite
     public void fillItemCategory(ItemGroup group, NonNullList<ItemStack> items) {
+
         if (this.allowdedIn(group)) {
             ItemStack stack = new ItemStack(this);
+            Iterator var4 = this.traits.iterator();
+
             if (CAConfig.COMMON.enableAutoEnchanting.get()) {
                 for (EnchantmentData enchant : this.enchantments) {
                     stack.enchant(enchant.enchantment, enchant.level);
                 }
             }
 
+            WeaponTrait trait;
+            IMeleeTraitCallback callback;
+            while(var4.hasNext()) {
+                trait = (WeaponTrait)var4.next();
+                callback = trait.getMeleeCallback();
+                if (callback != null) {
+                    callback.onCreateItem(this.material, stack);
+                }
+            }
+
+            var4 = this.material.getAllWeaponTraits().iterator();
+
+            while(var4.hasNext()) {
+                trait = (WeaponTrait)var4.next();
+                callback = trait.getMeleeCallback();
+                if (callback != null) {
+                    callback.onCreateItem(this.material, stack);
+                }
+            }
+
+            this.initNBT(stack, false);
             items.add(stack);
         }
     }

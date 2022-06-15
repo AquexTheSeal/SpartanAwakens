@@ -13,7 +13,8 @@ public class UltimateRangedWeaponProperty extends RangedCallbackWeaponTrait {
 
     @Override
     public float modifyLongbowDrawTime(WeaponMaterial material, float baseDraw) {
-        return 0F;
+        baseDraw = 0.25F;
+        return 0.25F;
     }
 
     @Override

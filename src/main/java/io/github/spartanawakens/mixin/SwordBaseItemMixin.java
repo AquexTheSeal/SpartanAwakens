@@ -6,16 +6,19 @@ import com.oblivioussp.spartanweaponry.item.SwordBaseItem;
 import io.github.chaosawakens.api.IAutoEnchantable;
 import io.github.chaosawakens.common.config.CAConfig;
 import io.github.spartanawakens.registry.SAAutoEnchantments;
+import io.github.spartanawakens.registry.SAItems;
 import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.item.*;
 import net.minecraft.util.NonNullList;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 @Mixin(SwordBaseItem.class)
 public class SwordBaseItemMixin extends SwordItem implements IAutoEnchantable {
+    @Shadow protected WeaponMaterial material;
     private EnchantmentData[] enchantments;
 
     // Dummy constructor
@@ -31,6 +34,15 @@ public class SwordBaseItemMixin extends SwordItem implements IAutoEnchantable {
     @Inject(at = @At("TAIL"), method = "<init>(Ljava/lang/String;Lnet/minecraft/item/Item$Properties;Lcom/oblivioussp/spartanweaponry/api/WeaponMaterial;FFDZ[Lcom/oblivioussp/spartanweaponry/api/trait/WeaponTrait;)V")
     public void init2(String regName, Properties prop, WeaponMaterial material, float weaponBaseDamage, float weaponDamageMultiplier, double weaponSpeed, boolean usingDeferredRegister, WeaponTrait[] weaponTraits, CallbackInfo ci) {
         enchantments = SAAutoEnchantments.enchant(this, material);
+    }
+
+    @Override
+    public Rarity getRarity(ItemStack stack) {
+        if (material == SAItems.materialUltimateMelee || material == SAItems.materialUltimateRanged) {
+            return Rarity.EPIC;
+        } else {
+            return super.getRarity(stack);
+        }
     }
 
     @Override
