@@ -6,11 +6,11 @@ license="All Rights Reserved."
 
 [[mods]]
 modId="spartanawakens"
-version="${file.jarVersion}"
+version="1.0.0 for CA 10.0.0.0+"
 displayName="Spartan Awakens"
-authors="Aqu, Blackout"
+authors="AquexTheSeal, T4One"
 description='''Spartan Weaponry compatibility for Chaos Awakens.'''
-itemIcon="minecraft:diamond_sword"
+logoFile="logo.png"
 
 [[dependencies.spartanawakens]]
 modId="forge"
