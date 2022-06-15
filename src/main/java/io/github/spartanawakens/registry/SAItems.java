@@ -19,17 +19,17 @@ import net.minecraftforge.registries.IForgeRegistry;
 
 @Mod.EventBusSubscriber(bus = Mod.EventBusSubscriber.Bus.MOD)
 public class SAItems {
-    public static WeaponMaterial materialCrystalWood = new WeaponMaterial("crystal_wood", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, new ResourceLocation("chaosawakens:crystal_wood"));
-    public static WeaponMaterial materialKyanite = new WeaponMaterial("kyanite", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, new ResourceLocation("chaosawakens:kyanite"));
-    public static WeaponMaterial materialPinkTourmaline = new WeaponMaterial("pink_tourmaline", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, new ResourceLocation("chaosawakens:pink_tourmaline"));
-    public static WeaponMaterial materialCatsEye = new WeaponMaterial("cats_eye", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, new ResourceLocation("chaosawakens:cats_eye"));
+    public static WeaponMaterial materialCrystalWood = new WeaponMaterial("crystal_wood", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, SATags.Items.CRYSTAL_WOOD.getName());
+    public static WeaponMaterial materialKyanite = new WeaponMaterial("kyanite", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, SATags.Items.KYANITE.getName());
+    public static WeaponMaterial materialPinkTourmaline = new WeaponMaterial("pink_tourmaline", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, SATags.Items.PINK_TOURMALINE.getName());
+    public static WeaponMaterial materialCatsEye = new WeaponMaterial("cats_eye", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, SATags.Items.CATS_EYE.getName());
 
-    public static WeaponMaterial materialEmerald = new WeaponMaterial("emerald", SpartanAwakens.MODID, 0, 0, 3, 1300, 8.0F, 6.0F, 24, new ResourceLocation("minecraft:emerald"));
-    public static WeaponMaterial materialTigersEye = new WeaponMaterial("tigers_eye", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, new ResourceLocation("chaosawakens:tigers_eye"));
-    public static WeaponMaterial materialAmethyst = new WeaponMaterial("amethyst", SpartanAwakens.MODID, 0, 0, 3, 2000, 9.0F, 11.0F, 18, new ResourceLocation("chaosawakens:amethyst"));
-    public static WeaponMaterial materialRuby = new WeaponMaterial("ruby", SpartanAwakens.MODID, 0, 0, 4, 1800, 10.0F, 16.0F, 22, new ResourceLocation("chaosawakens:ruby"));
-    public static WeaponMaterial materialUltimateMelee = new WeaponMaterial("ultimate", SpartanAwakens.MODID, 0, 0, 5, 3000, 15.0F, 36.0F, 64, new ResourceLocation("chaosawakens:titanium_ingot"), new UltimateMeeleeWeaponProperty("ultimate_melee", SpartanAwakens.MODID));
-    public static WeaponMaterial materialUltimateRanged = new WeaponMaterial("ultimate", SpartanAwakens.MODID, 0, 0, 5, 3000, 15.0F, 36.0F, 64, new ResourceLocation("chaosawakens:titanium_ingot"), new UltimateRangedWeaponProperty("ultimate_ranged", SpartanAwakens.MODID));
+    public static WeaponMaterial materialEmerald = new WeaponMaterial("emerald", SpartanAwakens.MODID, 0, 0, 3, 1300, 8.0F, 6.0F, 24, SATags.Items.EMERALD.getName());
+    public static WeaponMaterial materialTigersEye = new WeaponMaterial("tigers_eye", SpartanAwakens.MODID, 0, 0, 3, 1600, 10.0F, 8.0F, 20, SATags.Items.TIGERS_EYE.getName());
+    public static WeaponMaterial materialAmethyst = new WeaponMaterial("amethyst", SpartanAwakens.MODID, 0, 0, 3, 2000, 9.0F, 11.0F, 18, SATags.Items.AMETHYST.getName());
+    public static WeaponMaterial materialRuby = new WeaponMaterial("ruby", SpartanAwakens.MODID, 0, 0, 4, 1800, 10.0F, 16.0F, 22, SATags.Items.RUBY.getName());
+    public static WeaponMaterial materialUltimateMelee = new WeaponMaterial("ultimate", SpartanAwakens.MODID, 0, 0, 5, 3000, 15.0F, 36.0F, 64, SATags.Items.ULTIMATE.getName(), new UltimateMeeleeWeaponProperty("ultimate_melee", SpartanAwakens.MODID));
+    public static WeaponMaterial materialUltimateRanged = new WeaponMaterial("ultimate", SpartanAwakens.MODID, 0, 0, 5, 3000, 15.0F, 36.0F, 64, SATags.Items.ULTIMATE.getName(), new UltimateRangedWeaponProperty("ultimate_ranged", SpartanAwakens.MODID));
 
     public static Item crystalWoodHandle;
     public static Item crystalWoodPole;
@@ -59,8 +59,7 @@ public class SAItems {
     public static SAStandardWeapons glaives;
     public static SAStandardWeapons quarterstaves;
     public static SAStandardWeapons scythes;
-    
-    // TODO: 19/04/2022 Ultimate and Crystal Wood pole and handle.
+
     static {
         Item.Properties prop = (new Item.Properties()).tab(SAItemGroups.spartanAwakensCAMatsItemGroup);
         crystalWoodHandle = new SABasicItem("crystal_wood_handle", prop);

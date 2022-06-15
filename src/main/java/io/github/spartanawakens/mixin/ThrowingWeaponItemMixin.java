@@ -7,7 +7,7 @@ import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait;
 import com.oblivioussp.spartanweaponry.init.ModEnchantments;
 import com.oblivioussp.spartanweaponry.item.ThrowingWeaponItem;
 import io.github.chaosawakens.api.IAutoEnchantable;
-import io.github.chaosawakens.common.config.CAConfig;
+import io.github.chaosawakens.common.config.CACommonConfig;
 import io.github.spartanawakens.registry.SAAutoEnchantments;
 import io.github.spartanawakens.registry.SAItems;
 import net.minecraft.enchantment.EnchantmentData;
@@ -69,7 +69,7 @@ public abstract class ThrowingWeaponItemMixin extends Item implements IAutoEncha
             ItemStack stack = new ItemStack(this);
             Iterator var4 = this.traits.iterator();
 
-            if (CAConfig.COMMON.enableAutoEnchanting.get()) {
+            if (CACommonConfig.COMMON.enableAutoEnchanting.get()) {
                 for (EnchantmentData enchant : this.enchantments) {
                     stack.enchant(enchant.enchantment, enchant.level);
                 }
@@ -101,7 +101,7 @@ public abstract class ThrowingWeaponItemMixin extends Item implements IAutoEncha
     }
 
     public boolean isFoil(ItemStack stack) {
-        return (CAConfig.COMMON.enableAutoEnchanting.get() && enchantments.length > 0) || super.isFoil(stack);
+        return (CACommonConfig.COMMON.enableAutoEnchanting.get() && enchantments.length > 0) || super.isFoil(stack);
     }
 
     @Override

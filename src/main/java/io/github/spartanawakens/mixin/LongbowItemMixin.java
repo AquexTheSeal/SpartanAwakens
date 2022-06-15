@@ -5,7 +5,7 @@ import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait;
 import com.oblivioussp.spartanweaponry.item.LongbowItem;
 import com.oblivioussp.spartanweaponry.item.SwordBaseItem;
 import io.github.chaosawakens.api.IAutoEnchantable;
-import io.github.chaosawakens.common.config.CAConfig;
+import io.github.chaosawakens.common.config.CACommonConfig;
 import io.github.spartanawakens.registry.SAAutoEnchantments;
 import io.github.spartanawakens.registry.SAItems;
 import net.minecraft.enchantment.EnchantmentData;
@@ -143,7 +143,7 @@ public class LongbowItemMixin extends BowItem implements IAutoEnchantable {
     public void fillItemCategory(ItemGroup group, NonNullList<ItemStack> items) {
         if (this.allowdedIn(group)) {
             ItemStack stack = new ItemStack(this);
-            if (CAConfig.COMMON.enableAutoEnchanting.get()) {
+            if (CACommonConfig.COMMON.enableAutoEnchanting.get()) {
                 for (EnchantmentData enchant : this.enchantments) {
                     stack.enchant(enchant.enchantment, enchant.level);
                 }
@@ -154,7 +154,7 @@ public class LongbowItemMixin extends BowItem implements IAutoEnchantable {
     }
 
     public boolean isFoil(ItemStack stack) {
-        return (CAConfig.COMMON.enableAutoEnchanting.get() && enchantments.length > 0) || super.isFoil(stack);
+        return (CACommonConfig.COMMON.enableAutoEnchanting.get() && enchantments.length > 0) || super.isFoil(stack);
     }
 
     @Override
