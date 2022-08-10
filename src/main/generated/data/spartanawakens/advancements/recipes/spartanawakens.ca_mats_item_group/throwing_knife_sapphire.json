@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:throwing_knife_sapphire"
+    ]
+  },
+  "criteria": {
+    "has_sapphire_throwing_knife": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:sapphire"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:throwing_knife_sapphire"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sapphire_throwing_knife",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:dagger",
+  "pattern": [
+    "#",
+    "|"
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:crystal_wood"
+    },
+    "|": {
+      "item": "spartanawakens:crystal_wood_handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:dagger_crystal_wood"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "dagger"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

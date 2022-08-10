@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:throwing_knife",
+  "pattern": [
+    "|#"
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:sapphire"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:throwing_knife_sapphire"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "throwing_knife"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

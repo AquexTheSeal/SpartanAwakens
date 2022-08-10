@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:longsword",
+  "pattern": [
+    " # ",
+    " # ",
+    "#|#"
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:sapphire"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:longsword_sapphire"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "longsword"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

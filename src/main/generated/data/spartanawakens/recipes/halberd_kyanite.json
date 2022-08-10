@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:halberd",
+  "pattern": [
+    " #",
+    "##",
+    "#/"
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:kyanite"
+    },
+    "/": {
+      "item": "spartanawakens:crystal_wood_pole"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:halberd_kyanite"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "halberd"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

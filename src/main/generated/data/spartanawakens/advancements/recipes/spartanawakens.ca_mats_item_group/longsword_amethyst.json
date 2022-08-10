@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:longsword_amethyst"
+    ]
+  },
+  "criteria": {
+    "has_amethyst_longsword": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:amethyst"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:longsword_amethyst"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_amethyst_longsword",
+      "has_the_recipe"
+    ]
+  ]
+}

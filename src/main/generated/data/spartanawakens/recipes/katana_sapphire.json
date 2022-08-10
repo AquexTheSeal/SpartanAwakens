@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:katana",
+  "pattern": [
+    "  #",
+    " # ",
+    "|  "
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:sapphire"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:katana_sapphire"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "katana"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

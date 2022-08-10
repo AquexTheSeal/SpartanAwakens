@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:scythe",
+  "pattern": [
+    "## ",
+    "  #",
+    " / "
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:kyanite"
+    },
+    "/": {
+      "item": "spartanawakens:crystal_wood_handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:scythe_kyanite"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "scythe"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

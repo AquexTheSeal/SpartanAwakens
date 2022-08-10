@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:javelin",
+  "pattern": [
+    "/#"
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:crystal_wood"
+    },
+    "/": {
+      "item": "spartanawakens:crystal_wood_handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:javelin_crystal_wood"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "javelin"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

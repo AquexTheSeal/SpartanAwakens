@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:spear_emerald"
+    ]
+  },
+  "criteria": {
+    "has_emerald_spear": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:emerald"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:spear_emerald"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_emerald_spear",
+      "has_the_recipe"
+    ]
+  ]
+}

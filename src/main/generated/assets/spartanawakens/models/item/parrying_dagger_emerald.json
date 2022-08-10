@@ -1,0 +1,14 @@
+{
+  "parent": "spartanweaponry:item/base/parrying_dagger",
+  "textures": {
+    "layer0": "spartanawakens:item/parrying_dagger_emerald"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "minecraft:blocking": 1.0
+      },
+      "model": "spartanawakens:item/parrying_dagger_emerald_blocking"
+    }
+  ]
+}

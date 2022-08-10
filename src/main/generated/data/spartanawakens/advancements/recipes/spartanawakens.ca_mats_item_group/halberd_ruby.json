@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:halberd_ruby"
+    ]
+  },
+  "criteria": {
+    "has_ruby_halberd": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:ruby"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:halberd_ruby"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ruby_halberd",
+      "has_the_recipe"
+    ]
+  ]
+}

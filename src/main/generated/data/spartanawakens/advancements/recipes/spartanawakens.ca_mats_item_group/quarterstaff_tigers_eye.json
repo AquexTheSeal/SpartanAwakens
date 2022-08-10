@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:quarterstaff_tigers_eye"
+    ]
+  },
+  "criteria": {
+    "has_tigers_eye_quarterstaff": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:tigers_eye"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:quarterstaff_tigers_eye"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_tigers_eye_quarterstaff",
+      "has_the_recipe"
+    ]
+  ]
+}

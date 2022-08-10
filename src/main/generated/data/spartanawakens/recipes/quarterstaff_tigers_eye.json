@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:quarterstaff",
+  "pattern": [
+    "  #",
+    " / ",
+    "#  "
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:tigers_eye"
+    },
+    "/": {
+      "item": "spartanweaponry:handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:quarterstaff_tigers_eye"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "quarterstaff"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

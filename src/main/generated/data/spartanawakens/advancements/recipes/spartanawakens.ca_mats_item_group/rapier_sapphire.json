@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:rapier_sapphire"
+    ]
+  },
+  "criteria": {
+    "has_sapphire_rapier": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:sapphire"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:rapier_sapphire"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sapphire_rapier",
+      "has_the_recipe"
+    ]
+  ]
+}

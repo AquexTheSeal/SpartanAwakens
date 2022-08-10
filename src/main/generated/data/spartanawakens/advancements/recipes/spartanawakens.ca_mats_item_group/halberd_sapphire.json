@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:halberd_sapphire"
+    ]
+  },
+  "criteria": {
+    "has_sapphire_halberd": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:sapphire"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:halberd_sapphire"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sapphire_halberd",
+      "has_the_recipe"
+    ]
+  ]
+}

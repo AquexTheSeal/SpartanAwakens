@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:longbow_ruby"
+    ]
+  },
+  "criteria": {
+    "has_ruby_longbow": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:ruby"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:longbow_ruby"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ruby_longbow",
+      "has_the_recipe"
+    ]
+  ]
+}

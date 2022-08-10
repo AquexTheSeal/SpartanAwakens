@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:saber",
+  "pattern": [
+    " #",
+    " #",
+    "#|"
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:sapphire"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:saber_sapphire"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "saber"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

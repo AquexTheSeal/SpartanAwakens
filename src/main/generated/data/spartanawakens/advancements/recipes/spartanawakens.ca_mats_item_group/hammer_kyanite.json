@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:hammer_kyanite"
+    ]
+  },
+  "criteria": {
+    "has_kyanite_battle_hammer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:kyanite"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:hammer_kyanite"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_kyanite_battle_hammer",
+      "has_the_recipe"
+    ]
+  ]
+}

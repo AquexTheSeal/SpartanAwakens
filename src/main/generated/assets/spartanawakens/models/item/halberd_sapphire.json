@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/halberd",
+  "textures": {
+    "layer0": "spartanawakens:item/halberd_sapphire"
+  }
+}

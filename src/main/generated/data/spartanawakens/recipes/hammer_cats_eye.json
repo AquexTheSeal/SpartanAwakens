@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:battle_hammer",
+  "pattern": [
+    "###",
+    "###",
+    " | "
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:cats_eye"
+    },
+    "|": {
+      "item": "spartanawakens:crystal_wood_handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:hammer_cats_eye"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "battle_hammer"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

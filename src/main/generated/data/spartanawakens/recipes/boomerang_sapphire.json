@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:boomerang",
+  "pattern": [
+    "#PP",
+    "P  ",
+    "P  "
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:sapphire"
+    },
+    "P": {
+      "tag": "minecraft:planks"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:boomerang_sapphire"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "boomerang"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

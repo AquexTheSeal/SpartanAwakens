@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:throwing_knife",
+  "pattern": [
+    "|#"
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:kyanite"
+    },
+    "|": {
+      "item": "spartanawakens:crystal_wood_handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:throwing_knife_kyanite"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "throwing_knife"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

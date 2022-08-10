@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:warhammer",
+  "pattern": [
+    " #",
+    "##",
+    " |"
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:ultimate"
+    },
+    "|": {
+      "item": "spartanawakens:ultimate_handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:warhammer_ultimate"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "warhammer"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

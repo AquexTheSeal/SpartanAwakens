@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:pike",
+  "pattern": [
+    "#",
+    "/",
+    "/"
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:pink_tourmaline"
+    },
+    "/": {
+      "item": "spartanawakens:crystal_wood_pole"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:pike_pink_tourmaline"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "pike"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

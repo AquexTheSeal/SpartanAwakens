@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:quarterstaff_sapphire"
+    ]
+  },
+  "criteria": {
+    "has_sapphire_quarterstaff": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:sapphire"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:quarterstaff_sapphire"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sapphire_quarterstaff",
+      "has_the_recipe"
+    ]
+  ]
+}

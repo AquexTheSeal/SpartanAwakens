@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:spear",
+  "pattern": [
+    "#",
+    "/"
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:tigers_eye"
+    },
+    "/": {
+      "item": "spartanweaponry:pole"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:spear_tigers_eye"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "spear"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

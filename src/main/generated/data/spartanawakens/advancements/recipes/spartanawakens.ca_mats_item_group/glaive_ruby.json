@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:glaive_ruby"
+    ]
+  },
+  "criteria": {
+    "has_ruby_glaive": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:ruby"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:glaive_ruby"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_ruby_glaive",
+      "has_the_recipe"
+    ]
+  ]
+}

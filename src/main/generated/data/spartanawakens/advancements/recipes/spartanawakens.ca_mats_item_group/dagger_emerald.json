@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:dagger_emerald"
+    ]
+  },
+  "criteria": {
+    "has_emerald_dagger": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:emerald"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:dagger_emerald"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_emerald_dagger",
+      "has_the_recipe"
+    ]
+  ]
+}

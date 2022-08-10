@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:scythe",
+  "pattern": [
+    "## ",
+    "  #",
+    " / "
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:ruby"
+    },
+    "/": {
+      "item": "spartanweaponry:handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:scythe_ruby"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "scythe"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

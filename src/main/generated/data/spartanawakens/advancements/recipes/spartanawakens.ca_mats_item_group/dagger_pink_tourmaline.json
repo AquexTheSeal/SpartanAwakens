@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:dagger_pink_tourmaline"
+    ]
+  },
+  "criteria": {
+    "has_pink_tourmaline_dagger": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:pink_tourmaline"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:dagger_pink_tourmaline"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_pink_tourmaline_dagger",
+      "has_the_recipe"
+    ]
+  ]
+}

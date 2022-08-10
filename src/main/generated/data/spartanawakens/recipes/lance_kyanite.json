@@ -1,0 +1,31 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:lance",
+  "pattern": [
+    "  #",
+    "#/ ",
+    "|# "
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:kyanite"
+    },
+    "|": {
+      "item": "spartanawakens:crystal_wood_handle"
+    },
+    "/": {
+      "item": "spartanawakens:crystal_wood_pole"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:lance_kyanite"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "lance"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

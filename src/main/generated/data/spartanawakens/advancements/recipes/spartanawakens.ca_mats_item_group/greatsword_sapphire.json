@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:greatsword_sapphire"
+    ]
+  },
+  "criteria": {
+    "has_sapphire_greatsword": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:sapphire"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:greatsword_sapphire"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sapphire_greatsword",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:glaive_cats_eye"
+    ]
+  },
+  "criteria": {
+    "has_cats_eye_glaive": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:cats_eye"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:glaive_cats_eye"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_cats_eye_glaive",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:javelin_amethyst"
+    ]
+  },
+  "criteria": {
+    "has_amethyst_javelin": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:amethyst"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:javelin_amethyst"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_amethyst_javelin",
+      "has_the_recipe"
+    ]
+  ]
+}

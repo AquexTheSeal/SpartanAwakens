@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/longbow_pulling",
+  "textures": {
+    "layer0": "spartanawakens:item/longbow_emerald_pulling_0"
+  }
+}

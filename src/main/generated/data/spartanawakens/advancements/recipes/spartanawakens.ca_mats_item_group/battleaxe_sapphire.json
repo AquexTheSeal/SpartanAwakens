@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:battleaxe_sapphire"
+    ]
+  },
+  "criteria": {
+    "has_sapphire_battleaxe": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:sapphire"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:battleaxe_sapphire"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sapphire_battleaxe",
+      "has_the_recipe"
+    ]
+  ]
+}

@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "rewards": {
+    "recipes": [
+      "spartanawakens:hammer_sapphire"
+    ]
+  },
+  "criteria": {
+    "has_sapphire_battle_hammer": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "tag": "spartanawakens:sapphire"
+          }
+        ]
+      }
+    },
+    "has_the_recipe": {
+      "trigger": "minecraft:recipe_unlocked",
+      "conditions": {
+        "recipe": "spartanawakens:hammer_sapphire"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "has_sapphire_battle_hammer",
+      "has_the_recipe"
+    ]
+  ]
+}

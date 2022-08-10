@@ -1,0 +1,6 @@
+{
+  "parent": "spartanweaponry:item/base/heavy_crossbow_pulling",
+  "textures": {
+    "layer0": "spartanawakens:item/heavy_crossbow_cats_eye_pulling_0"
+  }
+}

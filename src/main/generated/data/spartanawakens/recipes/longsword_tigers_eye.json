@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:longsword",
+  "pattern": [
+    " # ",
+    " # ",
+    "#|#"
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:tigers_eye"
+    },
+    "|": {
+      "item": "spartanweaponry:handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:longsword_tigers_eye"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "longsword"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}

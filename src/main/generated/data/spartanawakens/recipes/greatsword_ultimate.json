@@ -1,0 +1,28 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "spartanweaponry:greatsword",
+  "pattern": [
+    " # ",
+    "###",
+    "#|#"
+  ],
+  "key": {
+    "#": {
+      "tag": "spartanawakens:ultimate"
+    },
+    "|": {
+      "item": "spartanawakens:ultimate_handle"
+    }
+  },
+  "result": {
+    "item": "spartanawakens:greatsword_ultimate"
+  },
+  "conditions": [
+    {
+      "disabled": [
+        "greatsword"
+      ],
+      "type": "spartanweaponry:type_disabled"
+    }
+  ]
+}
