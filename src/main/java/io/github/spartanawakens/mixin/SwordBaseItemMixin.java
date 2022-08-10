@@ -5,8 +5,11 @@ import com.oblivioussp.spartanweaponry.api.trait.WeaponTrait;
 import com.oblivioussp.spartanweaponry.item.SwordBaseItem;
 import io.github.chaosawakens.api.IAutoEnchantable;
 import io.github.chaosawakens.common.config.CACommonConfig;
+import io.github.spartanawakens.SpartanAwakens;
+import io.github.spartanawakens.integrations.utilities.SAMaterial;
 import io.github.spartanawakens.registry.SAAutoEnchantments;
 import io.github.spartanawakens.registry.SAItems;
+import io.github.spartanawakens.registry.weapontypes.SAStandardWeapons;
 import net.minecraft.enchantment.EnchantmentData;
 import net.minecraft.item.*;
 import net.minecraft.util.NonNullList;
@@ -29,6 +32,9 @@ public class SwordBaseItemMixin extends SwordItem implements IAutoEnchantable {
     @Inject(at = @At("TAIL"), method = "<init>(Ljava/lang/String;Lnet/minecraft/item/Item$Properties;Lcom/oblivioussp/spartanweaponry/api/WeaponMaterial;FFDLjava/lang/String;Z[Lcom/oblivioussp/spartanweaponry/api/trait/WeaponTrait;)V")
     public void init1(String regName, Properties prop, WeaponMaterial material, float weaponBaseDamage, float weaponDamageMultiplier, double weaponSpeed, String customDisplayName, boolean usingDeferredRegister, WeaponTrait[] weaponTraits, CallbackInfo ci) {
         enchantments = SAAutoEnchantments.enchant(this, material);
+        if (material instanceof SAMaterial) {
+            this.setRegistryName(SpartanAwakens.MODID, regName);
+        }
     }
 
     @Inject(at = @At("TAIL"), method = "<init>(Ljava/lang/String;Lnet/minecraft/item/Item$Properties;Lcom/oblivioussp/spartanweaponry/api/WeaponMaterial;FFDZ[Lcom/oblivioussp/spartanweaponry/api/trait/WeaponTrait;)V")

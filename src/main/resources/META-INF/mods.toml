@@ -6,7 +6,7 @@ license="All Rights Reserved."
 
 [[mods]]
 modId="spartanawakens"
-version="1.0.0 for CA 10.0.0.0+"
+version="1.0.1 for CA 10.0.0.0+"
 displayName="Spartan Awakens"
 authors="AquexTheSeal, T4One"
 description='''Spartan Weaponry compatibility for Chaos Awakens.'''

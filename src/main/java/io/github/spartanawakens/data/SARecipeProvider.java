@@ -119,6 +119,15 @@ public class SARecipeProvider extends RecipeProvider {
                 SAItems.tomahawks.ultimate, SAItems.javelins.ultimate, SAItems.boomerangs.ultimate, SAItems.battleaxes.ultimate,
                 SAItems.flangedMaces.ultimate, SAItems.glaives.ultimate, SAItems.quarterstaves.ultimate, SAItems.scythes.ultimate
         );
+
+        registerMaterial(consumer, "sapphire", SATags.Items.SAPPHIRE, ModItems.handle, ModItems.pole,
+                SAItems.daggers.sapphire, SAItems.parryingDaggers.sapphire, SAItems.longswords.sapphire, SAItems.katanas.sapphire,
+                SAItems.sabers.sapphire, SAItems.rapiers.sapphire, SAItems.greatswords.sapphire, SAItems.battleHammers.sapphire,
+                SAItems.warhammers.sapphire, SAItems.spears.sapphire, SAItems.halberds.sapphire, SAItems.pikes.sapphire,
+                SAItems.lances.sapphire, SAItems.longbows.sapphire, SAItems.heavyCrossbows.sapphire, SAItems.throwingKnives.sapphire,
+                SAItems.tomahawks.sapphire, SAItems.javelins.sapphire, SAItems.boomerangs.sapphire, SAItems.battleaxes.sapphire,
+                SAItems.flangedMaces.sapphire, SAItems.glaives.sapphire, SAItems.quarterstaves.sapphire, SAItems.scythes.sapphire
+        );
     }
 
     public void registerMaterial(Consumer<IFinishedRecipe> consumer, String materialName, ITag<Item> materialTag, IItemProvider handle, IItemProvider pole,

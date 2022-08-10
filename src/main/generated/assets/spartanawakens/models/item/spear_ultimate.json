@@ -1,6 +1,0 @@
-{
-  "parent": "spartanweaponry:item/base/spear",
-  "textures": {
-    "layer0": "spartanawakens:item/spear_ultimate"
-  }
-}

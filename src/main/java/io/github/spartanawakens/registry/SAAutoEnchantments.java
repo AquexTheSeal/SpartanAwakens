@@ -22,7 +22,7 @@ public class SAAutoEnchantments {
                 };
             } else if (item instanceof ThrowingWeaponItem) {
                 return new EnchantmentData[]{
-                        new EnchantmentData(ModEnchantments.THROWING_CHARGE, 4),
+                        new EnchantmentData(ModEnchantments.THROWING_CHARGE, 2),
                         new EnchantmentData(ModEnchantments.THROWING_RANGE, 2),
                         new EnchantmentData(ModEnchantments.THROWING_AMMO, 2),
                         new EnchantmentData(ModEnchantments.THROWING_DAMAGE, 4)

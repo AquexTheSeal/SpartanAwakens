@@ -8,6 +8,8 @@ import com.oblivioussp.spartanweaponry.init.ModEnchantments;
 import com.oblivioussp.spartanweaponry.item.ThrowingWeaponItem;
 import io.github.chaosawakens.api.IAutoEnchantable;
 import io.github.chaosawakens.common.config.CACommonConfig;
+import io.github.spartanawakens.SpartanAwakens;
+import io.github.spartanawakens.integrations.utilities.SAMaterial;
 import io.github.spartanawakens.registry.SAAutoEnchantments;
 import io.github.spartanawakens.registry.SAItems;
 import net.minecraft.enchantment.EnchantmentData;
@@ -28,7 +30,6 @@ import java.util.List;
 @Mixin(ThrowingWeaponItem.class)
 public abstract class ThrowingWeaponItemMixin extends Item implements IAutoEnchantable {
     @Shadow protected WeaponMaterial material;
-    @Shadow protected int maxChargeTicks;
     @Shadow protected List<WeaponTrait> traits;
 
     @Shadow protected abstract void initNBT(ItemStack stack, boolean initUUID);
@@ -43,6 +44,9 @@ public abstract class ThrowingWeaponItemMixin extends Item implements IAutoEncha
     @Inject(at = @At("TAIL"), method = "<init>(Ljava/lang/String;Lnet/minecraft/item/Item$Properties;Lcom/oblivioussp/spartanweaponry/api/WeaponMaterial;FFFIIZ[Lcom/oblivioussp/spartanweaponry/api/trait/WeaponTrait;)V")
     public void init1(String regName, Properties prop, WeaponMaterial material, float weaponBaseDamage, float weaponDamageMultiplier, float weaponSpeed, int maxAmmoCapacity, int chargeTicks, boolean usingDeferredRegister, WeaponTrait[] traits, CallbackInfo ci) {
         enchantments = SAAutoEnchantments.enchant(this, material);
+        if (material instanceof SAMaterial) {
+            this.setRegistryName(SpartanAwakens.MODID, regName);
+        }
     }
 
     @Inject(at = @At("TAIL"), method = "<init>(Ljava/lang/String;Lnet/minecraft/item/Item$Properties;Lcom/oblivioussp/spartanweaponry/api/WeaponMaterial;FFFIILjava/lang/String;Z[Lcom/oblivioussp/spartanweaponry/api/trait/WeaponTrait;)V")
@@ -61,6 +65,7 @@ public abstract class ThrowingWeaponItemMixin extends Item implements IAutoEncha
 
     /**
      * @author ObliviousSpartan
+     * @reason To make it auto-enchantable for Ultimate Weapons
      */
     @Overwrite
     public void fillItemCategory(ItemGroup group, NonNullList<ItemStack> items) {

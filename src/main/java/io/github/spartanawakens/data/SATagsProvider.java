@@ -1,8 +1,8 @@
 package io.github.spartanawakens.data;
 
+import com.blackout.chaosadditions.registry.CADItems;
 import io.github.chaosawakens.common.registry.CABlocks;
 import io.github.chaosawakens.common.registry.CAItems;
-import io.github.chaosawakens.data.CATagProvider;
 import io.github.spartanawakens.SpartanAwakens;
 import io.github.spartanawakens.registry.SATags;
 import net.minecraft.data.BlockTagsProvider;
@@ -12,7 +12,6 @@ import net.minecraft.item.Items;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.data.ExistingFileHelper;
 
-import javax.annotation.Nullable;
 import java.nio.file.Path;
 
 public class SATagsProvider extends BlockTagsProvider {
@@ -44,6 +43,8 @@ public class SATagsProvider extends BlockTagsProvider {
             tag(SATags.Items.AMETHYST).add(CAItems.AMETHYST.get());
             tag(SATags.Items.RUBY).add(CAItems.RUBY.get());
             tag(SATags.Items.ULTIMATE).add(CAItems.TITANIUM_INGOT.get());
+
+            tag(SATags.Items.SAPPHIRE).add(CADItems.SAPPHIRE.get());
         }
     }
 

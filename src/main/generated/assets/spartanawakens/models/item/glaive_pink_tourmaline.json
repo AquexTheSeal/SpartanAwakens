@@ -1,6 +1,0 @@
-{
-  "parent": "spartanweaponry:item/base/glaive",
-  "textures": {
-    "layer0": "spartanawakens:item/glaive_pink_tourmaline"
-  }
-}

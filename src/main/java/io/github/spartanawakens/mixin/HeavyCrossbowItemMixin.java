@@ -5,6 +5,8 @@ import com.oblivioussp.spartanweaponry.item.HeavyCrossbowItem;
 import com.oblivioussp.spartanweaponry.item.LongbowItem;
 import io.github.chaosawakens.api.IAutoEnchantable;
 import io.github.chaosawakens.common.config.CACommonConfig;
+import io.github.spartanawakens.SpartanAwakens;
+import io.github.spartanawakens.integrations.utilities.SAMaterial;
 import io.github.spartanawakens.registry.SAAutoEnchantments;
 import io.github.spartanawakens.registry.SAItems;
 import net.minecraft.enchantment.EnchantmentData;
@@ -29,6 +31,9 @@ public class HeavyCrossbowItemMixin extends CrossbowItem implements IAutoEnchant
     @Inject(at = @At("TAIL"), method = "<init>(Ljava/lang/String;Lnet/minecraft/item/Item$Properties;Lcom/oblivioussp/spartanweaponry/api/WeaponMaterial;Z)V")
     public void init1(String unlocName, Properties prop, WeaponMaterial material, boolean usingDeferredRegister, CallbackInfo ci) {
         enchantments = SAAutoEnchantments.enchant(this, material);
+        if (material instanceof SAMaterial) {
+            this.setRegistryName(SpartanAwakens.MODID, unlocName);
+        }
     }
 
     @Inject(at = @At("TAIL"), method = "<init>(Ljava/lang/String;Lnet/minecraft/item/Item$Properties;Lcom/oblivioussp/spartanweaponry/api/WeaponMaterial;Ljava/lang/String;Z)V")

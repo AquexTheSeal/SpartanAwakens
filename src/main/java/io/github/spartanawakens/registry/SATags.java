@@ -20,6 +20,8 @@ public class SATags {
         public static final INamedTag<Item> RUBY = tag("ruby");
         public static final INamedTag<Item> ULTIMATE = tag("ultimate");
 
+        public static final INamedTag<Item> SAPPHIRE = tag("sapphire");
+
         public Items() {
         }
 

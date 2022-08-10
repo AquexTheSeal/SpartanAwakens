@@ -6,6 +6,8 @@ import com.oblivioussp.spartanweaponry.item.LongbowItem;
 import com.oblivioussp.spartanweaponry.item.SwordBaseItem;
 import io.github.chaosawakens.api.IAutoEnchantable;
 import io.github.chaosawakens.common.config.CACommonConfig;
+import io.github.spartanawakens.SpartanAwakens;
+import io.github.spartanawakens.integrations.utilities.SAMaterial;
 import io.github.spartanawakens.registry.SAAutoEnchantments;
 import io.github.spartanawakens.registry.SAItems;
 import net.minecraft.enchantment.EnchantmentData;
@@ -40,6 +42,9 @@ public class LongbowItemMixin extends BowItem implements IAutoEnchantable {
     @Inject(at = @At("TAIL"), method = "<init>(Ljava/lang/String;Lnet/minecraft/item/Item$Properties;Lcom/oblivioussp/spartanweaponry/api/WeaponMaterial;Z)V")
     public void init1(String unlocName, Properties prop, WeaponMaterial material, boolean usingDeferredRegister, CallbackInfo ci) {
         enchantments = SAAutoEnchantments.enchant(this, material);
+        if (material instanceof SAMaterial) {
+            this.setRegistryName(SpartanAwakens.MODID, unlocName);
+        }
     }
 
     @Inject(at = @At("TAIL"), method = "<init>(Ljava/lang/String;Lnet/minecraft/item/Item$Properties;Lcom/oblivioussp/spartanweaponry/api/WeaponMaterial;Ljava/lang/String;Z)V")
@@ -49,6 +54,7 @@ public class LongbowItemMixin extends BowItem implements IAutoEnchantable {
 
     /**
      * @author ObliviousSpartan
+     * @reason to allow instant shooting for the Ultimate Longbow
      */
     @Overwrite
     public void releaseUsing(ItemStack p_77615_1_, World p_77615_2_, LivingEntity p_77615_3_, int p_77615_4_) {

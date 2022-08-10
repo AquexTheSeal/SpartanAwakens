@@ -1,5 +1,6 @@
 package io.github.spartanawakens.item;
 
+import io.github.spartanawakens.SpartanAwakens;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -14,7 +15,7 @@ import java.util.List;
 public class SABasicItem extends Item {
     public SABasicItem(String regName, Properties properties) {
         super(properties);
-        this.setRegistryName(new ResourceLocation("spartanawakens", regName));
+        this.setRegistryName(new ResourceLocation(SpartanAwakens.MODID, regName));
     }
 
     public void appendHoverText(ItemStack stack, World worldIn, List<ITextComponent> tooltip, ITooltipFlag flagIn) {

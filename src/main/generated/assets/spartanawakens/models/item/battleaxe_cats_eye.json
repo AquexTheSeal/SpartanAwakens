@@ -1,6 +1,0 @@
-{
-  "parent": "spartanweaponry:item/base/battleaxe",
-  "textures": {
-    "layer0": "spartanawakens:item/battleaxe_cats_eye"
-  }
-}

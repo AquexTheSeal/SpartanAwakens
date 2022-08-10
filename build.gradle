@@ -16,7 +16,7 @@ apply plugin: "maven-publish"
 apply plugin: 'org.spongepowered.mixin'
 
 group = "io.github"
-version = "${project.minecraftVersion}-${project.modVersion}"
+version = "1.16.5-1.1.1"
 archivesBaseName = project.modId
 
 java.toolchain.languageVersion = JavaLanguageVersion.of(8)
@@ -88,6 +88,9 @@ dependencies {
     implementation fg.deobf("io.github:ChaosAwakens:1.16.5-${project.chaosawakens}")
     implementation fg.deobf("software.bernie.geckolib:geckolib-forge-1.16.5:${project.geckolib}")
 
+    //implementation fg.deobf("com.blackout:chaosadditions:1.16.5-0.3")
+    implementation fg.deobf("ignore:chaosadditions:1.16.5-0.4")
+
     implementation fg.deobf("curse.maven:attributefix-280510:${project.attributefix}")
 
     annotationProcessor 'org.spongepowered:mixin:0.8.5:processor'
@@ -122,6 +125,9 @@ mixin {
 }
 
 repositories {
+    flatDir {
+        dirs 'jardependencies'
+    }
     maven {
         name = "CurseForge"
         url = "https://www.cursemaven.com"
@@ -142,6 +148,10 @@ repositories {
     maven {
         name = "ModMaven"
         url = "https://modmaven.dev"
+    }
+    maven {
+        name = "ChaosAdditionsMaven"
+        url = "https://raw.github.com/Blackout03/ChaosAdditionsMaven/main"
     }
 }
 
