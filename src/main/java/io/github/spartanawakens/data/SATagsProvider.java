@@ -44,7 +44,7 @@ public class SATagsProvider extends BlockTagsProvider {
             tag(SATags.Items.RUBY).add(CAItems.RUBY.get());
             tag(SATags.Items.ULTIMATE).add(CAItems.TITANIUM_INGOT.get());
 
-            tag(SATags.Items.SAPPHIRE).add(CADItems.SAPPHIRE.get());
+            tag(SATags.Items.SAPPHIRE).addOptional(CADItems.SAPPHIRE.get().getRegistryName());
         }
     }
 

@@ -1,6 +1,9 @@
 {
   "replace": false,
   "values": [
-    "chaosadditions:sapphire"
+    {
+      "id": "chaosadditions:sapphire",
+      "required": false
+    }
   ]
 }
